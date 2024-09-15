@@ -273,3 +273,10 @@ Measurements
  ```
  - Goal: quantify impact of CMSHLT-3302.
  - Input sample: run-383631, LS 476-479 (PU ~64).
+
+`240915_testCMSHLT3284`
+ ```
+ ./run_240915_testCMSHLT3284.sh out_240915_testCMSHLT3284_
+ ```
+ - Goal: quantify impact of CMSHLT-3284.
+ - Input sample: 2023 HI data (EphemeralHLTPhysics), run-375720.

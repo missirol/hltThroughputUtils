@@ -18,6 +18,10 @@ def customizeHLTforThroughputMeasurements(process):
     if hasattr(process, 'FastTimerService'):
         process.FastTimerService.writeJSONSummary = True
 
+    # remove HLTAnalyzerEndpath if present
+    if hasattr(process, 'HLTAnalyzerEndpath'):
+        del process.HLTAnalyzerEndpath
+
     return process
 
 def customizeHLTforCMSHLT3196_baseline(process):
@@ -235,4 +239,14 @@ def customizeHLTforCMSHLT3288_test01(process):
 
 def customizeHLTforCMSHLT3302_baseline(process):
     process = customizeHLTforThroughputMeasurements(process)
+    return process
+
+def customizeHLTforCMSHLT3284_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.GlobalTag.globaltag = '140X_dataRun3_HLT_v3'
+
+    process.PrescaleService.lvl1DefaultLabel = 'HIon'
+    process.PrescaleService.forceDefault = True
+
     return process
