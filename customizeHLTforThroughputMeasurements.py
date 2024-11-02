@@ -250,3 +250,32 @@ def customizeHLTforCMSHLT3284_baseline(process):
     process.PrescaleService.forceDefault = True
 
     return process
+
+def customizeHLTforCMSHLT3359_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.options.numberOfConcurrentLuminosityBlocks = 1
+
+    from Configuration.AlCa.GlobalTag import GlobalTag as customiseGlobalTag
+    process.GlobalTag = customiseGlobalTag(
+        process.GlobalTag,
+        globaltag = "141X_dataRun3_HLT_v1",
+        conditions = "L1Menu_CollisionsHeavyIons2024_v1_0_3_xml,L1TUtmTriggerMenuRcd,frontier://FrontierProd/CMS_CONDITIONS,,9999-12-31 23:59:59.000"
+    )
+
+    process.PrescaleService.lvl1DefaultLabel = '6p1E27'
+    process.PrescaleService.forceDefault = True
+
+    return process
+
+def customizeHLTforCMSHLT3359_target01(process):
+    process = customizeHLTforCMSHLT3359_baseline(process)
+
+    process.FastTimerService.dqmTimeRange = 60000
+    process.FastTimerService.enableDQMbyPath = True
+    process.FastTimerService.dqmPathTimeRange = 60000
+    process.FastTimerService.dqmPathTimeResolution = 500
+    process.FastTimerService.dqmPathMemoryRange = 1000000
+    process.FastTimerService.dqmPathMemoryResolution = 5000
+
+    return process

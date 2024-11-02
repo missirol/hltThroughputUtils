@@ -278,6 +278,14 @@ Measurements
  ```
  ./run_240915_testCMSHLT3284.sh out_240915_testCMSHLT3284_a5ccc42
  ```
- - Goal: quantify impact of CMSHLT-3284.
+ - Goal: quantify impact of CMSHLT-3284 on HLT timing.
  - Input sample: 2023 HI data (EphemeralHLTPhysics), run-375720.
  - Release: CMSSW_14_0_15_patch1, x86-64-v3 enabled.
+
+`241102_testCMSHLT3359`
+ ```
+ ./run_241102_testCMSHLT3359.sh out_241102_testCMSHLT3359_
+ ```
+ - Goal: quantify HLT timing of a realistic 2024 HLT PbPb menu.
+ - Input sample: skim of 2023 HI data (HIEphemeralZeroBias), run-375720.
+ - Release: CMSSW_14_1_4_patch3, x86-64-v3 enabled.
