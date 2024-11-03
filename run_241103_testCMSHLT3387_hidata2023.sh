@@ -3,7 +3,7 @@
 [ $# -eq 1 ] || exit 1
 
 jobLabel="${1}"
-runNumber=375665
+runNumber=375790
 outDir=/fff/user/"${USER}"/output/hltThroughputUtils
 
 run() {
@@ -20,9 +20,9 @@ run() {
 }
 
 https_proxy=http://cmsproxy.cms:3128/ \
-hltConfigFromDB --configName /users/missirol/test/dev/CMSSW_14_1_0/CMSHLT_3359/Test01/HLT/V4 > tmp0.py
+hltConfigFromDB --configName --adg /cdaq/test/missirol/dev/CMSSW_14_1_0/CMSHLT_3387/Test01/HLT/V3 > tmp0.py
 
-cp /gpu_data/store/hidata/HIRun2023A/HIEphemeralZeroBias_L1Skim2024_v1_0_3/FED/v1/run"${runNumber}"_cff.py .
+cp /gpu_data/store/hidata/HIRun2023*/HIEphemeralHLTPhysics/FED/v*/run"${runNumber}"_cff.py .
 
 for jobSubLabel in baseline target01; do
 
@@ -36,7 +36,7 @@ for jobSubLabel in baseline target01; do
 process.load('run${runNumber}_cff')
 
 from customizeHLTforThroughputMeasurements import *
-process = customizeHLTforCMSHLT3359_${jobSubLabel}(process)
+process = customizeHLTforCMSHLT3387_hidata2023_${jobSubLabel}(process)
 @EOF
 
   ### Final configuration file (dump)
@@ -66,4 +66,3 @@ rm -rf "${jobLabel}"*{cfg,dump}.py
 rm -rf run"${runNumber}"
 rm -rf run"${runNumber}"_cff.py
 rm -rf __pycache__ tmp
-rm -rf tmp0.py

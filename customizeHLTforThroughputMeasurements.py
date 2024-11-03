@@ -1,5 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 import fnmatch
+import re
+
+from HLTrigger.Configuration.common import filters_by_type
 
 def customizeHLTforThroughputMeasurements(process):
     # remove check on timestamp of online-beamspot payloads
@@ -251,7 +254,7 @@ def customizeHLTforCMSHLT3284_baseline(process):
 
     return process
 
-def customizeHLTforCMSHLT3359_baseline(process):
+def customizeHLTforCMSHLT3387_l1skim2024_baseline(process):
     process = customizeHLTforThroughputMeasurements(process)
 
     process.options.numberOfConcurrentLuminosityBlocks = 1
@@ -268,8 +271,110 @@ def customizeHLTforCMSHLT3359_baseline(process):
 
     return process
 
-def customizeHLTforCMSHLT3359_target01(process):
-    process = customizeHLTforCMSHLT3359_baseline(process)
+def customizeHLTforCMSHLT3387_l1skim2024_target01(process):
+    process = customizeHLTforCMSHLT3387_l1skim2024_baseline(process)
+
+    process.FastTimerService.dqmTimeRange = 60000
+    process.FastTimerService.enableDQMbyPath = True
+    process.FastTimerService.dqmPathTimeRange = 60000
+    process.FastTimerService.dqmPathTimeResolution = 500
+    process.FastTimerService.dqmPathMemoryRange = 1000000
+    process.FastTimerService.dqmPathMemoryResolution = 5000
+
+    return process
+
+def customizeHLTforCMSHLT3387_hidata2023_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.options.numberOfConcurrentLuminosityBlocks = 1
+
+    process.GlobalTag.globaltag = '141X_dataRun3_HLT_v1'
+
+    l1tSeeds = [
+        'L1_DoubleJet12_DeltaPhi2p0_NotZDC1n_AND_BptxAND',
+        'L1_DoubleJet12_DeltaPhi2p0_notMinimumBiasHF2_BptxAND',
+        'L1_DoubleJet12_DeltaPhi2p0_notZDC_OR_BptxAND',
+        'L1_DoubleJet16_DeltaPhi2p0_NotZDC1n_AND_BptxAND',
+        'L1_DoubleJet16_DeltaPhi2p0_notMinimumBiasHF2_BptxAND',
+        'L1_DoubleJet16_DeltaPhi2p0_notZDC_OR_BptxAND',
+        'L1_DoubleJet8_DeltaPhi2p0_NotZDC1n_AND_BptxAND',
+        'L1_DoubleJet8_DeltaPhi2p0_notMinimumBiasHF2_BptxAND',
+        'L1_DoubleJet8_DeltaPhi2p0_notZDC_OR_BptxAND',
+        'L1_DoubleUncorrJet12_DeltaPhi2p0_NotZDC1n_AND_BptxAND',
+        'L1_DoubleUncorrJet12_DeltaPhi2p0_notMinimumBiasHF2_BptxAND',
+        'L1_DoubleUncorrJet12_DeltaPhi2p0_notZDC_OR_BptxAND',
+        'L1_DoubleUncorrJet16_DeltaPhi2p0_NotZDC1n_AND_BptxAND',
+        'L1_DoubleUncorrJet16_DeltaPhi2p0_notMinimumBiasHF2_BptxAND',
+        'L1_DoubleUncorrJet16_DeltaPhi2p0_notZDC_OR_BptxAND',
+        'L1_DoubleUncorrJet8_DeltaPhi2p0_NotZDC1n_AND_BptxAND',
+        'L1_DoubleUncorrJet8_DeltaPhi2p0_notMinimumBiasHF2_BptxAND',
+        'L1_DoubleUncorrJet8_DeltaPhi2p0_notZDC_OR_BptxAND',
+        'L1_SingleJet12_ZDC1n_XOR_RapGap_BptxAND',
+        'L1_SingleJet12_notZDC_OR_BptxAND',
+        'L1_SingleJet16_ZDC1n_XOR_RapGap_BptxAND',
+        'L1_SingleJet16_notZDC_OR_BptxAND',
+        'L1_SingleJet20_ZDC1n_XOR_RapGap_BptxAND',
+        'L1_SingleJet20_notZDC_OR_BptxAND',
+        'L1_SingleJet24_ZDC1n_XOR_RapGap_BptxAND',
+        'L1_SingleJet24_notZDC_OR_BptxAND',
+        'L1_SingleJet28_ZDC1n_XOR_RapGap_BptxAND',
+        'L1_SingleJet28_notZDC_OR_BptxAND',
+        'L1_SingleJet8_ZDC1n_XOR_RapGap_BptxAND',
+        'L1_SingleJet8_notZDC_OR_BptxAND',
+        'L1_SingleMu0_Centrality_30_100_BptxAND',
+        'L1_SingleMu0_Centrality_40_100_BptxAND',
+        'L1_SingleMuOpen_Centrality_30_100_BptxAND',
+        'L1_SingleUncorrJet12_NotMinimumBiasHF2_AND_BptxAND',
+        'L1_SingleUncorrJet12_ZDC1n_AsymXOR_BptxAND',
+        'L1_SingleUncorrJet12_ZDC1n_Bkp1_AsymXOR_BptxAND',
+        'L1_SingleUncorrJet12_ZDC1n_Bkp1_XOR_BptxAND',
+        'L1_SingleUncorrJet12_ZDC1n_XOR_BptxAND',
+        'L1_SingleUncorrJet12_notZDC_OR_BptxAND',
+        'L1_SingleUncorrJet16_NotMinimumBiasHF2_AND_BptxAND',
+        'L1_SingleUncorrJet16_ZDC1n_AsymXOR_BptxAND',
+        'L1_SingleUncorrJet16_ZDC1n_Bkp1_AsymXOR_BptxAND',
+        'L1_SingleUncorrJet16_ZDC1n_Bkp1_XOR_BptxAND',
+        'L1_SingleUncorrJet16_ZDC1n_XOR_BptxAND',
+        'L1_SingleUncorrJet16_notZDC_OR_BptxAND',
+        'L1_SingleUncorrJet20_NotMinimumBiasHF2_AND_BptxAND',
+        'L1_SingleUncorrJet20_ZDC1n_AsymXOR_BptxAND',
+        'L1_SingleUncorrJet20_ZDC1n_Bkp1_AsymXOR_BptxAND',
+        'L1_SingleUncorrJet20_ZDC1n_Bkp1_XOR_BptxAND',
+        'L1_SingleUncorrJet20_ZDC1n_XOR_BptxAND',
+        'L1_SingleUncorrJet20_notZDC_OR_BptxAND',
+        'L1_SingleUncorrJet24_NotMinimumBiasHF2_AND_BptxAND',
+        'L1_SingleUncorrJet24_ZDC1n_AsymXOR_BptxAND',
+        'L1_SingleUncorrJet24_ZDC1n_Bkp1_AsymXOR_BptxAND',
+        'L1_SingleUncorrJet24_ZDC1n_Bkp1_XOR_BptxAND',
+        'L1_SingleUncorrJet24_ZDC1n_XOR_BptxAND',
+        'L1_SingleUncorrJet24_notZDC_OR_BptxAND',
+        'L1_SingleUncorrJet28_NotMinimumBiasHF2_AND_BptxAND',
+        'L1_SingleUncorrJet28_ZDC1n_AsymXOR_BptxAND',
+        'L1_SingleUncorrJet28_ZDC1n_Bkp1_AsymXOR_BptxAND',
+        'L1_SingleUncorrJet28_ZDC1n_Bkp1_XOR_BptxAND',
+        'L1_SingleUncorrJet28_ZDC1n_XOR_BptxAND',
+        'L1_SingleUncorrJet28_notZDC_OR_BptxAND',
+        'L1_SingleUncorrJet8_NotMinimumBiasHF2_AND_BptxAND',
+        'L1_SingleUncorrJet8_ZDC1n_AsymXOR_BptxAND',
+        'L1_SingleUncorrJet8_ZDC1n_Bkp1_AsymXOR_BptxAND',
+        'L1_SingleUncorrJet8_ZDC1n_Bkp1_XOR_BptxAND',
+        'L1_SingleUncorrJet8_ZDC1n_XOR_BptxAND',
+        'L1_SingleUncorrJet8_notZDC_OR_BptxAND',
+        'L1_ZDC1n_AND_AND_NotMBHF2_BptxAND',
+        'L1_ZDC1n_OR_RapGap_BptxAND',
+    ]
+
+    for mod in filters_by_type(process, 'HLTL1TSeed'):
+        for l1tSeed in l1tSeeds:
+            mod.L1SeedsLogicalExpression = re.sub(fr"\b{l1tSeed}\b", 'L1_AlwaysTrue', mod.L1SeedsLogicalExpression.value())
+
+    process.PrescaleService.lvl1DefaultLabel = 'HIon'
+    process.PrescaleService.forceDefault = True
+
+    return process
+
+def customizeHLTforCMSHLT3387_hidata2023_target01(process):
+    process = customizeHLTforCMSHLT3387_hidata2023_baseline(process)
 
     process.FastTimerService.dqmTimeRange = 60000
     process.FastTimerService.enableDQMbyPath = True
