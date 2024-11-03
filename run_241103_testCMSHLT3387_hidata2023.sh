@@ -52,7 +52,7 @@ process = customizeHLTforCMSHLT3387_hidata2023_${jobSubLabel}(process)
     unset CUDA_VISIBLE_DEVICES
     ./start-mps-daemon.sh
     sleep 1
-    run "${jobLabel}"_"${jobSubLabel}"_dump.py ./patatrack-scripts "${outDir}"/"${jobDirPrefix}"-gpu_mps 8 32 20
+    run "${jobLabel}"_"${jobSubLabel}"_dump.py ./patatrack-scripts "${outDir}"/"${jobDirPrefix}"-gpu_mps 16 32 20
     ./stop-mps-daemon.sh
     sleep 1
 
