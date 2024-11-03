@@ -282,10 +282,20 @@ Measurements
  - Input sample: 2023 HI data (EphemeralHLTPhysics), run-375720.
  - Release: CMSSW_14_0_15_patch1, x86-64-v3 enabled.
 
-`241102_testCMSHLT3359`
+`241102_testCMSHLT3387_l1skim2024`
  ```
- ./run_241102_testCMSHLT3359.sh out_241102_testCMSHLT3359_
+ ./run_241102_testCMSHLT3387_l1skim2024.sh out_241102_testCMSHLT3387_l1skim2024_a38d0ed
  ```
  - Goal: quantify HLT timing of a realistic 2024 HLT PbPb menu.
  - Input sample: skim of 2023 HI data (HIEphemeralZeroBias), run-375720.
- - Release: CMSSW_14_1_4_patch3, x86-64-v3 enabled.
+ - Release: CMSSW_14_1_4_patch3, x86-64-v3 enabled, NVIDIA MPS enabled.
+
+`241103_testCMSHLT3387_hidata2023`
+ ```
+ ./run_241103_testCMSHLT3387_hidata2023.sh out_241103_testCMSHLT3387_hidata2023_a38d0ed
+ ```
+ - Goal: quantify HLT timing of a realistic 2024 HLT PbPb menu,
+   including impact of "Test08" in CMSHLT-3387 (FastTimerService customisation).
+ - Input sample: 2023 HI data (HIEphemeralHLTPhysics), run-375790.
+ - Menu customised to be compatible with 2023 PbPb menu.
+ - Release: CMSSW_14_1_4_patch3, x86-64-v3 enabled, NVIDIA MPS enabled.
