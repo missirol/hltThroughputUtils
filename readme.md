@@ -284,7 +284,7 @@ Measurements
 
 `241102_testCMSHLT3387_l1skim2024`
  ```
- ./run_241102_testCMSHLT3387_l1skim2024.sh out_241102_testCMSHLT3387_l1skim2024_a38d0ed
+ ./run_241102_testCMSHLT3387_l1skim2024.sh out_241102_testCMSHLT3387_l1skim2024_c023f78
  ```
  - Goal: quantify HLT timing of a realistic 2024 HLT PbPb menu.
  - Input sample: skim of 2023 HI data (HIEphemeralZeroBias), run-375720.
@@ -292,7 +292,7 @@ Measurements
 
 `241103_testCMSHLT3387_hidata2023`
  ```
- ./run_241103_testCMSHLT3387_hidata2023.sh out_241103_testCMSHLT3387_hidata2023_a38d0ed
+ ./run_241103_testCMSHLT3387_hidata2023.sh out_241103_testCMSHLT3387_hidata2023_c023f78
  ```
  - Goal: quantify HLT timing of a realistic 2024 HLT PbPb menu,
    including impact of "Test08" in CMSHLT-3387 (FastTimerService customisation).
