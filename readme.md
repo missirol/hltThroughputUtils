@@ -302,7 +302,7 @@ Measurements
 
 `241109_testCMSHLT3387_hidata2024`
  ```
- ./run_241109_testCMSHLT3387_hidata2024.sh out_241109_testCMSHLT3387_hidata2024_
+ ./run_241109_testCMSHLT3387_hidata2024.sh out_241109_testCMSHLT3387_hidata2024_9538c3d
  ```
  - Goal: reproduce timing of 2024 PbPb menu on 2024 PbPb data.
  - Input sample: 2024 PbPb data (HIEphemeralHLTPhysics), run-387973.
