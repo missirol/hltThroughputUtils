@@ -50,7 +50,7 @@ process = customizeHLTforCMSHLT3387_hidata2024_${jobSubLabel}(process)
 
     ## CPU
     export CUDA_VISIBLE_DEVICES=
-    run "${jobLabel}"_"${jobSubLabel}"_dump.py ./patatrack-scripts "${jobDirPrefix}"-cpu 8 32 20
+    run "${jobLabel}"_"${jobSubLabel}"_dump.py ./patatrack-scripts "${outDir}"/"${jobDirPrefix}"-cpu 8 32 20
 
     ## GPU MPS
     unset CUDA_VISIBLE_DEVICES
