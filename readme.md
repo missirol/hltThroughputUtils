@@ -299,3 +299,12 @@ Measurements
  - Input sample: 2023 HI data (HIEphemeralHLTPhysics), run-375790.
  - Menu customised to be compatible with 2023 PbPb menu.
  - Release: CMSSW_14_1_4_patch3, x86-64-v3 enabled, NVIDIA MPS enabled.
+
+`241109_testCMSHLT3387_hidata2024`
+ ```
+ ./run_241109_testCMSHLT3387_hidata2024.sh out_241109_testCMSHLT3387_hidata2024_
+ ```
+ - Goal: reproduce timing of 2024 PbPb menu on 2024 PbPb data.
+ - Input sample: 2024 PbPb data (HIEphemeralHLTPhysics), run-387973.
+ - Same menu and prescales as used online in run-387973.
+ - Release: CMSSW_14_1_4_patch3, x86-64-v3 enabled, NVIDIA MPS enabled.

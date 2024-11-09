@@ -384,3 +384,13 @@ def customizeHLTforCMSHLT3387_hidata2023_target01(process):
     process.FastTimerService.dqmPathMemoryResolution = 5000
 
     return process
+
+def customizeHLTforCMSHLT3387_hidata2024_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.options.numberOfConcurrentLuminosityBlocks = 1
+
+#    process.PrescaleService.lvl1DefaultLabel = '1031bEphemeral'
+#    process.PrescaleService.forceDefault = True
+
+    return process
