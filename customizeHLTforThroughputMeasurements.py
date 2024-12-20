@@ -394,3 +394,31 @@ def customizeHLTforCMSHLT3387_hidata2024_baseline(process):
 #    process.PrescaleService.forceDefault = True
 
     return process
+
+def customizeHLTforGSFOriginRadius_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    return process
+
+def customizeHLTforGSFOriginRadius_test0p05(process):
+    process = customizeHLTforGSFOriginRadius_baseline(process)
+    process.hltEleSeedsTrackingRegions.RegionPSet.originRadius = 0.05
+    return process
+
+def customizeHLTforPixelAutoTunedCA_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    return process
+
+def customizeHLTforPixelAutoTunedCA_newTuneV01(process):
+    process = customizeHLTforPixelAutoTunedCA_baseline(process)
+    process.hltPixelTracksSoA.CAThetaCutBarrel = 0.00111685053
+    process.hltPixelTracksSoA.CAThetaCutForward = 0.00249872683
+    process.hltPixelTracksSoA.hardCurvCut = 0.695091509
+    process.hltPixelTracksSoA.dcaCutInnerTriplet = 0.0419242041
+    process.hltPixelTracksSoA.dcaCutOuterTriplet = 0.293522194
+    process.hltPixelTracksSoA.phiCuts = [
+        832, 379, 481, 765, 1136,
+        706, 656, 407, 1212, 404,
+        699, 470, 652, 621, 1017,
+        616, 450, 555, 572
+    ]
+    return process
