@@ -308,3 +308,21 @@ Measurements
  - Input sample: 2024 PbPb data (HIEphemeralHLTPhysics), run-387973.
  - Same menu and prescales as used online in run-387973.
  - Release: CMSSW_14_1_4_patch3, x86-64-v3 enabled, NVIDIA MPS enabled.
+
+`241220_testGSFOriginRadius_v01`
+ ```
+ ./run_241220_testGSFOriginRadius_v01.sh out_241220_testGSFOriginRadius_v01_
+ ```
+ - Goal: quantify impact of GSF-tracking update (hltEleSeedsTrackingRegions.RegionPSet.originRadius = 0.05).
+ - Input sample: EphemeralHLTPhysics, ~40K events of run-383631, LS 476-479 (PU ~64).
+ - Release: CMSSW_14_0_19_patch2, x86-64-v3 enabled, NVIDIA MPS enabled.
+ - Done on `hilton-c2b01-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+
+`241220_testPixelAutoTunedCA_v01`
+ ```
+ ./run_241220_testPixelAutoTunedCA_v01.sh out_241220_testPixelAutoTunedCA_v01_
+ ```
+ - Goal: quantify impact of auto-tuned pixel-CA parameters (see TSG meeting on Dec-10).
+ - Input sample: EphemeralHLTPhysics, ~40K events of run-383631, LS 476-479 (PU ~64).
+ - Release: CMSSW_14_0_19_patch2, x86-64-v3 enabled, NVIDIA MPS enabled.
+ - Done on `hilton-c2b01-44-01`, using 8 jobs with 32 threads and 24 streams per job.
