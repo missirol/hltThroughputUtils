@@ -311,7 +311,7 @@ Measurements
 
 `241220_testGSFOriginRadius_v01`
  ```
- ./run_241220_testGSFOriginRadius_v01.sh out_241220_testGSFOriginRadius_v01_
+ ./run_241220_testGSFOriginRadius_v01.sh out_241220_testGSFOriginRadius_v01_ea71d35
  ```
  - Goal: quantify impact of GSF-tracking update (hltEleSeedsTrackingRegions.RegionPSet.originRadius = 0.05).
  - Input sample: EphemeralHLTPhysics, ~40K events of run-383631, LS 476-479 (PU ~64).
@@ -320,7 +320,7 @@ Measurements
 
 `241220_testPixelAutoTunedCA_v01`
  ```
- ./run_241220_testPixelAutoTunedCA_v01.sh out_241220_testPixelAutoTunedCA_v01_
+ ./run_241220_testPixelAutoTunedCA_v01.sh out_241220_testPixelAutoTunedCA_v01_ea71d35
  ```
  - Goal: quantify impact of auto-tuned pixel-CA parameters (see TSG meeting on Dec-10).
  - Input sample: EphemeralHLTPhysics, ~40K events of run-383631, LS 476-479 (PU ~64).
