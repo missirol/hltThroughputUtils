@@ -3,6 +3,7 @@ import fnmatch
 import re
 
 from HLTrigger.Configuration.common import filters_by_type
+from HLTrigger.Configuration.customizeHLTforCMSSW import customizeHLTforCMSSW
 
 def customizeHLTforThroughputMeasurements(process):
     # remove check on timestamp of online-beamspot payloads
@@ -421,4 +422,15 @@ def customizeHLTforPixelAutoTunedCA_newTuneV01(process):
         699, 470, 652, 621, 1017,
         616, 450, 555, 572
     ]
+    return process
+
+def customizeHLTforCMSSW47070_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    process = customizeHLTforCMSSW(process)
+
+    process.GlobalTag.globaltag = '141X_dataRun3_HLT_v2'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
     return process
