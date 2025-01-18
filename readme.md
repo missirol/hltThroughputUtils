@@ -326,3 +326,13 @@ Measurements
  - Input sample: EphemeralHLTPhysics, ~40K events of run-383631, LS 476-479 (PU ~64).
  - Release: CMSSW_14_0_19_patch2, x86-64-v3 enabled, NVIDIA MPS enabled.
  - Done on `hilton-c2b01-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+
+`250117_cmssw47070`
+ ```
+ ./run_250117_cmssw47070.sh out_250117_cmssw47070_0587d2d
+ ```
+ - Goal: comparing 15_0_X IBs before and after cms-sw/cmssw#47070.
+ - Input data: run-383631, LSs 476-479, ~40k events (PU ~64).
+ - HLT menu: `/dev/CMSSW_14_2_0/GRun/V11` (current GRun menu).
+ - Done on `hilton-c2b01-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
