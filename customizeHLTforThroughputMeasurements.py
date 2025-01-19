@@ -434,3 +434,14 @@ def customizeHLTforCMSSW47070_baseline(process):
     process.PrescaleService.forceDefault = True
 
     return process
+
+def customizeHLTforGRun_14_0_X(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    process = customizeHLTforCMSSW(process)
+
+    process.GlobalTag.globaltag = '140X_dataRun3_HLT_v3'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process
