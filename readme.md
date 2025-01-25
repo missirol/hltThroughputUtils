@@ -336,3 +336,14 @@ Measurements
  - HLT menu: `/dev/CMSSW_14_2_0/GRun/V11` (current GRun menu).
  - Done on `hilton-c2b01-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250126_testPixelAutoTunedPlusMkFit`
+ ```
+ ./run_250126_testPixelAutoTunedPlusMkFit.sh out_250126_testPixelAutoTunedPlusMkFit_
+ ```
+ - Goal: measure timing of 2 tracking updates targeting 2025 startup.
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: CMSSW_15_0_0_pre2 (latest pre-release).
+ - HLT menu: `/dev/CMSSW_14_2_0/GRun/V11` (current GRun menu).
+ - Done on `hilton-c2b01-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.

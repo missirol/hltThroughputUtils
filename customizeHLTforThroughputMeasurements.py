@@ -5,6 +5,8 @@ import re
 from HLTrigger.Configuration.common import filters_by_type
 from HLTrigger.Configuration.customizeHLTforCMSSW import customizeHLTforCMSSW
 
+from RecoTracker.MkFit.customizeHLTIter0ToMkFit import customizeHLTIter0ToMkFit
+
 def customizeHLTforThroughputMeasurements(process):
     # remove check on timestamp of online-beamspot payloads
     process.hltOnlineBeamSpotESProducer.timeThreshold = int(1e6)
@@ -444,4 +446,35 @@ def customizeHLTforGRun_14_0_X(process):
     process.PrescaleService.lvl1DefaultLabel = '2p0E34'
     process.PrescaleService.forceDefault = True
 
+    return process
+
+def customizeHLTforPixelAutoTunedPlusMkFit_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    process = customizeHLTforCMSSW(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process
+
+def customizeHLTforPixelAutoTunedPlusMkFit_pixel(process):
+    process = customizeHLTforPixelAutoTunedPlusMkFit_baseline(process)
+    process.hltPixelTracksSoA.CAThetaCutBarrel = 0.00111685053
+    process.hltPixelTracksSoA.CAThetaCutForward = 0.00249872683
+    process.hltPixelTracksSoA.hardCurvCut = 0.695091509
+    process.hltPixelTracksSoA.dcaCutInnerTriplet = 0.0419242041
+    process.hltPixelTracksSoA.dcaCutOuterTriplet = 0.293522194
+    process.hltPixelTracksSoA.phiCuts = [
+        832, 379, 481, 765, 1136,
+        706, 656, 407, 1212, 404,
+        699, 470, 652, 621, 1017,
+        616, 450, 555, 572
+    ]
+    return process
+
+def customizeHLTforPixelAutoTunedPlusMkFit_pixelAndMkFit(process):
+    process = customizeHLTforPixelAutoTunedPlusMkFit_pixel(process)
+    process = customizeHLTIter0ToMkFit(process)
     return process
