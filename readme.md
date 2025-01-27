@@ -339,7 +339,7 @@ Measurements
 
 `250126_testPixelAutoTunedPlusMkFit`
  ```
- ./run_250126_testPixelAutoTunedPlusMkFit.sh out_250126_testPixelAutoTunedPlusMkFit_
+ ./run_250126_testPixelAutoTunedPlusMkFit.sh out_250126_testPixelAutoTunedPlusMkFit_0feab92
  ```
  - Goal: measure timing of 2 tracking updates targeting 2025 startup.
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
