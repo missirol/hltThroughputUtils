@@ -48,6 +48,12 @@ process = customizeHLTforPixelAutoTunedPlusMkFit_${jobSubLabel}(process)
 
     jobDirPrefix="${jobLabel}"-"${jobSubLabel}"-"${CMSSW_VERSION}"-"${ntry}"
 
+#    ## CPU
+#    export CUDA_VISIBLE_DEVICES=
+#    sleep 1
+#    run "${jobLabel}"_"${jobSubLabel}"_dump.py ./patatrack-scripts "${outDir}"/"${jobDirPrefix}"-cpu 8 32 24
+#    sleep 1
+
     ## GPU MPS
     unset CUDA_VISIBLE_DEVICES
     ./start-mps-daemon.sh
