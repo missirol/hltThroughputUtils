@@ -343,7 +343,18 @@ Measurements
  ```
  - Goal: measure timing of 2 tracking updates targeting 2025 startup.
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
- - Release: CMSSW_15_0_0_pre2 (latest pre-release).
- - HLT menu: `/dev/CMSSW_14_2_0/GRun/V11` (current GRun menu).
+ - Release: CMSSW_15_0_0_pre2.
+ - HLT menu: `/dev/CMSSW_14_2_0/GRun/V11`.
+ - Done on `hilton-c2b01-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250202_testPixelClusterLayer1Threshold`
+ ```
+ ./run_250202_testPixelClusterLayer1Threshold.sh out_250202_testPixelClusterLayer1Threshold_
+ ```
+ - Goal: measure impact on timing of reduction of min-cluster charge in BPix Layer-1.
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: CMSSW_15_0_0_pre2.
+ - HLT menu: `/dev/CMSSW_14_2_0/GRun/V11`.
  - Done on `hilton-c2b01-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.

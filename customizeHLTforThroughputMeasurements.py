@@ -478,3 +478,44 @@ def customizeHLTforPixelAutoTunedPlusMkFit_pixelAndMkFit(process):
     process = customizeHLTforPixelAutoTunedPlusMkFit_pixel(process)
     process = customizeHLTIter0ToMkFit(process)
     return process
+
+def customizeHLTforPixelClusterLayer1Threshold_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    process = customizeHLTforCMSSW(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process
+
+def customizeHLTforPixelClusterLayer1Threshold_test2000(process):
+    process = customizeHLTforPixelClusterLayer1Threshold_baseline(process)
+
+    process.hltSiPixelClustersSoA.clusterThreshold_layer1 = 2000
+    process.hltSiPixelClusters.clusterThreshold_layer1 = 2000
+    process.hltSiPixelClustersSoASerialSync.clusterThreshold_layer1 = 2000
+    process.hltSiPixelClustersSerialSync.clusterThreshold_layer1 = 2000
+    process.hltSiPixelClustersRegForDisplaced.ClusterThreshold_L1 = 2000
+
+    return process
+
+def customizeHLTforPixelClusterLayer1Threshold_test2000PlusCAPlusMkFit(process):
+    process = customizeHLTforPixelClusterLayer1Threshold_test2000(process)
+
+    process.hltPixelTracksSoA.CAThetaCutBarrel = 0.00111685053
+    process.hltPixelTracksSoA.CAThetaCutForward = 0.00249872683
+    process.hltPixelTracksSoA.hardCurvCut = 0.695091509
+    process.hltPixelTracksSoA.dcaCutInnerTriplet = 0.0419242041
+    process.hltPixelTracksSoA.dcaCutOuterTriplet = 0.293522194
+    process.hltPixelTracksSoA.phiCuts = [
+        832, 379, 481, 765, 1136,
+        706, 656, 407, 1212, 404,
+        699, 470, 652, 621, 1017,
+        616, 450, 555, 572
+    ]
+
+    process = customizeHLTIter0ToMkFit(process)
+
+    return process
