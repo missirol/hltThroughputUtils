@@ -519,3 +519,29 @@ def customizeHLTforPixelClusterLayer1Threshold_test2000PlusCAPlusMkFit(process):
     process = customizeHLTIter0ToMkFit(process)
 
     return process
+
+def customizeHLTforPixelAutoTunedPlusMkFitMsgLoggerTest_baseline(process):
+    process = customizeHLTforPixelAutoTunedPlusMkFit_baseline(process)
+    del process.MessageLogger
+    process.load('FWCore.MessageLogger.MessageLogger_cfi')
+    return process
+
+def customizeHLTforPixelAutoTunedPlusMkFitMsgLoggerTest_pixel(process):
+    process = customizeHLTforPixelAutoTunedPlusMkFitMsgLoggerTest_baseline(process)
+    process.hltPixelTracksSoA.CAThetaCutBarrel = 0.00111685053
+    process.hltPixelTracksSoA.CAThetaCutForward = 0.00249872683
+    process.hltPixelTracksSoA.hardCurvCut = 0.695091509
+    process.hltPixelTracksSoA.dcaCutInnerTriplet = 0.0419242041
+    process.hltPixelTracksSoA.dcaCutOuterTriplet = 0.293522194
+    process.hltPixelTracksSoA.phiCuts = [
+        832, 379, 481, 765, 1136,
+        706, 656, 407, 1212, 404,
+        699, 470, 652, 621, 1017,
+        616, 450, 555, 572
+    ]
+    return process
+
+def customizeHLTforPixelAutoTunedPlusMkFitMsgLoggerTest_pixelAndMkFit(process):
+    process = customizeHLTforPixelAutoTunedPlusMkFitMsgLoggerTest_pixel(process)
+    process = customizeHLTIter0ToMkFit(process)
+    return process
