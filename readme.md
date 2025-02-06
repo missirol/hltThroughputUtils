@@ -9,7 +9,7 @@ ssh hilton-c2b02-44-01
 
 ```bash
 dirName=MY_TEST_DIR
-cmsswRel=CMSSW_14_0_13_MULTIARCHS
+cmsswRel=CMSSW_15_0_0_pre2
 
 export SCRAM_ARCH=el8_amd64_gcc12
 source /cvmfs/cms.cern.ch/cmsset_default.sh
@@ -34,9 +34,7 @@ git clone git@github.com:missirol/hltThroughputUtils.git -o missirol -b master
 
 cd hltThroughputUtils
 
-git clone git@github.com:missirol/patatrack-scripts.git -o missirol -b master                 -- patatrack-scripts
-git clone git@github.com:missirol/patatrack-scripts.git -o missirol -b hilton-c2b02-44-01_cpu -- patatrack-scripts.cpu
-git clone git@github.com:missirol/patatrack-scripts.git -o missirol -b hilton-c2b02-44-01_gpu -- patatrack-scripts.gpu
+git clone git@github.com:missirol/patatrack-scripts.git -o missirol -b master_old -- patatrack-scripts
 ```
 
 Measurements
