@@ -545,3 +545,24 @@ def customizeHLTforPixelAutoTunedPlusMkFitMsgLoggerTest_pixelAndMkFit(process):
     process = customizeHLTforPixelAutoTunedPlusMkFitMsgLoggerTest_pixel(process)
     process = customizeHLTIter0ToMkFit(process)
     return process
+
+def customizeHLTforGSFOriginRadius_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    process = customizeHLTforCMSSW(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process
+
+def customizeHLTforGSFOriginRadius_eleL1TSeeded(process):
+    process = customizeHLTforGSFOriginRadius_baseline(process)
+    process.hltEleSeedsTrackingRegions.RegionPSet.originRadius = 0.05
+    return process
+
+def customizeHLTforGSFOriginRadius_eleAll(process):
+    process = customizeHLTforGSFOriginRadius_eleL1TSeeded(process)
+    process.hltEleSeedsTrackingRegionsUnseeded.RegionPSet.originRadius = 0.05
+    return process
