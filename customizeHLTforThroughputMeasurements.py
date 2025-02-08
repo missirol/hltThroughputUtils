@@ -501,7 +501,7 @@ def customizeHLTforPixelClusterLayer1Threshold_test2000(process):
 
     return process
 
-def customizeHLTforPixelClusterLayer1Threshold_test2000PlusCAPlusMkFit(process):
+def customizeHLTforPixelClusterLayer1Threshold_test2000PlusPixelCAPlusMkFit(process):
     process = customizeHLTforPixelClusterLayer1Threshold_test2000(process)
 
     process.hltPixelTracksSoA.CAThetaCutBarrel = 0.00111685053
