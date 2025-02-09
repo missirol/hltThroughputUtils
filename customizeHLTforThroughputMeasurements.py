@@ -501,7 +501,7 @@ def customizeHLTforPixelClusterLayer1Threshold_test2000(process):
 
     return process
 
-def customizeHLTforPixelClusterLayer1Threshold_test2000PlusPixelCAPlusMkFit(process):
+def customizeHLTforPixelClusterLayer1Threshold_test2000PlusPixelCAPlusMkFitMaxSiStripClus08(process):
     process = customizeHLTforPixelClusterLayer1Threshold_test2000(process)
 
     process.hltPixelTracksSoA.CAThetaCutBarrel = 0.00111685053
@@ -517,7 +517,13 @@ def customizeHLTforPixelClusterLayer1Threshold_test2000PlusPixelCAPlusMkFit(proc
     ]
 
     process = customizeHLTIter0ToMkFit(process)
+    process.hltSiStripRawToClustersFacility.Clusterizer.MaxClusterSize = 8
 
+    return process
+
+def customizeHLTforPixelClusterLayer1Threshold_test2000PlusPixelCAPlusMkFitMaxSiStripClus16(process):
+    process = customizeHLTforPixelClusterLayer1Threshold_test2000PlusPixelCAPlusMkFitMaxSiStripClus08(process)
+    process.hltSiStripRawToClustersFacility.Clusterizer.MaxClusterSize = 16
     return process
 
 def customizeHLTforPixelAutoTunedPlusMkFitMsgLoggerTest_baseline(process):
