@@ -359,7 +359,7 @@ Measurements
 
 `250208_testGSFOriginRadius`
  ```
- ./run_250208_testGSFOriginRadius.sh out_250208_testGSFOriginRadius_
+ ./run_250208_testGSFOriginRadius.sh out_250208_testGSFOriginRadius_6938d93
  ```
  - Goal: measure impact on timing of CMSHLT-3413 (incl. unseeded module).
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
