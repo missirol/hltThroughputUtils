@@ -572,3 +572,60 @@ def customizeHLTforGSFOriginRadius_eleAll(process):
     process = customizeHLTforGSFOriginRadius_eleL1TSeeded(process)
     process.hltEleSeedsTrackingRegionsUnseeded.RegionPSet.originRadius = 0.05
     return process
+
+def customizeHLTfor2025Startup_PixelCAwp1(process):
+    process.hltPixelTracksSoA.phiCuts = [965, 1241, 395, 698, 1058, 1211, 348, 782, 1016, 810, 463, 755, 694, 531, 770, 471, 592, 750, 348]
+    process.hltPixelTracksSoA.dcaCutInnerTriplet = 0.09181130994905196
+    process.hltPixelTracksSoA.dcaCutOuterTriplet = 0.4207246178345847
+    process.hltPixelTracksSoA.CAThetaCutBarrel = 0.001233027054994468
+    process.hltPixelTracksSoA.CAThetaCutForward = 0.003556913217741844
+    process.hltPixelTracksSoA.hardCurvCut = 0.5031696900017477
+    return process
+
+def customizeHLTfor2025Startup_PixelCAwp2(process):
+    process.hltPixelTracksSoA.phiCuts = [617, 767, 579, 496, 900, 1252, 435, 832, 1051, 913, 515, 604, 763, 706, 678, 560, 597, 574, 532]
+    process.hltPixelTracksSoA.dcaCutInnerTriplet = 0.07268965383396808
+    process.hltPixelTracksSoA.dcaCutOuterTriplet = 0.35106213112457163
+    process.hltPixelTracksSoA.CAThetaCutBarrel = 0.001033994253338825
+    process.hltPixelTracksSoA.CAThetaCutForward = 0.003640941685013238
+    process.hltPixelTracksSoA.hardCurvCut = 0.6592029738506096
+    return process
+
+def customizeHLTfor2025Startup_baseline0(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    process = customizeHLTforCMSSW(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process
+
+def customizeHLTfor2025Startup_baseline1(process):
+    process = customizeHLTfor2025Startup_baseline0(process)
+
+    process.hltEleSeedsTrackingRegions.RegionPSet.originRadius = 0.05
+    process.hltEleSeedsTrackingRegionsUnseeded.RegionPSet.originRadius = 0.05
+
+    process.hltSiPixelClustersSoA.clusterThreshold_layer1 = 2000
+    process.hltSiPixelClusters.clusterThreshold_layer1 = 2000
+    process.hltSiPixelClustersSoASerialSync.clusterThreshold_layer1 = 2000
+    process.hltSiPixelClustersSerialSync.clusterThreshold_layer1 = 2000
+    process.hltSiPixelClustersRegForDisplaced.ClusterThreshold_L1 = 2000
+
+    return process
+
+def customizeHLTfor2025Startup_baseline1_PixelCAwp1_MkFit16(process):
+    process = customizeHLTfor2025Startup_baseline1(process)
+    process = customizeHLTfor2025Startup_PixelCAwp1(process)
+    process = customizeHLTIter0ToMkFit(process)
+    process.hltSiStripRawToClustersFacility.Clusterizer.MaxClusterSize = 16
+    return process
+
+def customizeHLTfor2025Startup_baseline1_PixelCAwp2_MkFit16(process):
+    process = customizeHLTfor2025Startup_baseline1(process)
+    process = customizeHLTfor2025Startup_PixelCAwp2(process)
+    process = customizeHLTIter0ToMkFit(process)
+    process.hltSiStripRawToClustersFacility.Clusterizer.MaxClusterSize = 16
+    return process
