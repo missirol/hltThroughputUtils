@@ -629,3 +629,19 @@ def customizeHLTfor2025Startup_baseline1_PixelCAwp2_MkFit16(process):
     process = customizeHLTIter0ToMkFit(process)
     process.hltSiStripRawToClustersFacility.Clusterizer.MaxClusterSize = 16
     return process
+
+def customizeHLTforCMSHLT3411_baseline(process):
+    process = customizeHLTfor2025Startup_baseline1_PixelCAwp1_MkFit16(process)
+    return process
+
+def customizeHLTforCMSHLT3411_target0(process):
+    process = customizeHLTforCMSHLT3411_baseline(process)
+    process.hltDoubleMuonL3PreFilteredScoutingNoVtx.MinPt = 0
+    process.hltDoubleMuonL3FilteredScoutingNoVtx.MinPtMax = [0]
+    process.hltDoubleMuonL3FilteredScoutingNoVtx.MinPtMin = [0]
+    return process
+
+def customizeHLTforCMSHLT3411_target1(process):
+    process = customizeHLTforCMSHLT3411_baseline(process)
+    process.DST_PFScouting_DoubleMuon_v6.remove(process.HLTDoubleMuonScoutingNoVtx)
+    return process
