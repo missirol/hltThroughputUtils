@@ -20,11 +20,11 @@ run() {
 }
 
 https_proxy=http://cmsproxy.cms:3128/ \
-hltConfigFromDB --configName /users/missirol/test/dev/CMSSW_14_2_0/CMSHLT_3411/Test01/GRun/V2 > tmp0.py
+hltConfigFromDB --configName /users/missirol/test/dev/CMSSW_14_2_0/CMSHLT_3411/Test02/GRun/V2 > tmp0.py
 
 cp /gpu_data/store/data/Run2024*/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.py .
 
-for jobSubLabel in baseline0 baseline1 baseline1_PixelCAwp1_MkFit16 baseline1_PixelCAwp2_MkFit16; do
+for jobSubLabel in baseline; do
 
   # ensure MPS is disabled at the start
   ./stop-mps-daemon.sh
@@ -36,7 +36,7 @@ for jobSubLabel in baseline0 baseline1 baseline1_PixelCAwp1_MkFit16 baseline1_Pi
 process.load('run${runNumber}_cff')
 
 from customizeHLTforThroughputMeasurements import *
-process = customizeHLTfor2025Startup_${jobSubLabel}(process)
+process = customizeHLTforCMSHLT3411_${jobSubLabel}(process)
 @EOF
 
   ### Final configuration file (dump)
@@ -44,7 +44,7 @@ process = customizeHLTfor2025Startup_${jobSubLabel}(process)
   rm -rf tmp.py
 
   ### Throughput measurements (benchmark)
-  for ntry in {00..00}; do
+  for ntry in {00..01}; do
 
     jobDirPrefix="${jobLabel}"-"${jobSubLabel}"-"${CMSSW_VERSION}"-"${ntry}"
 
