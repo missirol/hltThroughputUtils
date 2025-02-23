@@ -386,13 +386,13 @@ Measurements
  - Goal: check impact of CMSHLT-3411 (new Vtx Path, plus filters with pT=0).
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
  - Release: `CMSSW_15_0_X` IBs post-pre3.
- - HLT menu: `/dev/CMSSW_14_2_0/GRun/V14`.
+ - HLT menu: `/users/missirol/test/dev/CMSSW_14_2_0/CMSHLT_3411/Test02/GRun/V2`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
 
 `250217_validateCMSSW_15_0_0_pre3`
  ```
- ./run_250217_validateCMSSW_15_0_0_pre3.sh out_250217_validateCMSSW_15_0_0_pre3_patatrack-scripts-dca218c_
+ ./run_250217_validateCMSSW_15_0_0_pre3.sh out_250217_validateCMSSW_15_0_0_pre3_patatrack-scripts-dca218c_aa64f97
  ```
  - Goal: measure throughput in CMSSW_15_0_0_pre2 and CMSSW_15_0_0_pre3.
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).

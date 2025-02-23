@@ -24,7 +24,7 @@ hltConfigFromDB --configName /users/missirol/test/dev/CMSSW_14_2_0/CMSHLT_3411/T
 
 cp /gpu_data/store/data/Run2024*/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.py .
 
-for jobSubLabel in baseline; do
+for jobSubLabel in baseline target2; do
 
   # ensure MPS is disabled at the start
   ./stop-mps-daemon.sh

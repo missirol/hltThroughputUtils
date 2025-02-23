@@ -645,3 +645,11 @@ def customizeHLTforCMSHLT3411_target1(process):
     process = customizeHLTforCMSHLT3411_baseline(process)
     process.DST_PFScouting_DoubleMuon_v6.remove(process.HLTDoubleMuonScoutingNoVtx)
     return process
+
+def customizeHLTforCMSHLT3411_target2(process):
+    process = customizeHLTforCMSHLT3411_baseline(process)
+    process.hltDoubleMuonL3PreFilteredScoutingNoVtx.MinPt = 0
+    process.hltDoubleMuonL3PreFilteredScoutingVtx.MinPt = 0
+    del process.hltDoubleMuonL3FilteredScoutingNoVtx
+    del process.hltDoubleMuonL3FilteredScoutingVtx
+    return process
