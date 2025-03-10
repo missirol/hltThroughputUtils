@@ -591,6 +591,16 @@ def customizeHLTfor2025Startup_PixelCAwp2(process):
     process.hltPixelTracksSoA.hardCurvCut = 0.6592029738506096
     return process
 
+def customizeHLTfor2025Startup_baseline_140X(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.GlobalTag.globaltag = '140X_dataRun3_HLT_v3'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process
+
 def customizeHLTfor2025Startup_baseline0(process):
     process = customizeHLTforThroughputMeasurements(process)
     process = customizeHLTforCMSSW(process)
