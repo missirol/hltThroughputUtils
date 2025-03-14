@@ -20,7 +20,8 @@ run() {
 }
 
 https_proxy=http://cmsproxy.cms:3128/ \
-hltConfigFromDB --runNumber "${runNumber}" > tmp0.py
+hltConfigFromDB --configName /dev/CMSSW_14_0_0/GRun/V182 > tmp0.py
+#hltConfigFromDB --runNumber "${runNumber}" > tmp0.py
 
 cp /gpu_data/store/data/Run2024*/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.py .
 
