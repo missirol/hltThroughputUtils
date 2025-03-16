@@ -411,3 +411,60 @@ Measurements
  - HLT menu: `/dev/CMSSW_14_2_0/GRun/V14`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250310_test2025Startup`
+ ```
+ ./run_250310_test2025Startup.sh out_250310_test2025Startup_patatrack-scripts-746bcbd_b6da97c
+ ```
+ - Goal: check impact of 2025 HLT-reco changes (e.g. CMSHLT-3421, CMSHLT-3422, CMSHLT-3413).
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_1`.
+ - HLT menu: `/dev/CMSSW_15_0_0/GRun/V11`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250310_test2025Startup_ref`
+ ```
+ ./run_250310_test2025Startup_ref.sh out_250310_test2025Startup_ref_patatrack-scripts-746bcbd_b6da97c
+ ./run_250310_test2025Startup_ref.sh out_250310_test2025Startup_ref_GRun_patatrack-scripts-746bcbd_b6da97c
+ ```
+ - Goal: baseline for `250310_test2025Startup` (i.e. HLT throughput in 2024).
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_14_0_15_patch1`.
+ - HLT menu: same as used in run-386593, or `/dev/CMSSW_14_0_0/GRun/V182`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250310_test2025Startup_ref2`
+ ```
+ ./run_250310_test2025Startup_ref2.sh out_250310_test2025Startup_ref2_patatrack-scripts-746bcbd_1dee926
+ ```
+ - Goal: reproduce results of CMS-DP-2024/082 (HLT throughput in 2024).
+ - Input data: run-383631, LSs 410-480, ~40k events (PU ~64).
+ - Release: `CMSSW_14_0_15_patch1`.
+ - HLT menu: `/online/collisions/2024/2e34/v1.4/HLT/V2`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250310_test2025Startup_ref3`
+ ```
+ ./run_250310_test2025Startup_ref3.sh out_250310_test2025Startup_ref3_patatrack-scripts-746bcbd_5efa871
+ ```
+ - Goal: same setup as ref2, except for using more recent 2024 input data.
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_14_0_15_patch1`.
+ - HLT menu: `/online/collisions/2024/2e34/v1.4/HLT/V2`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`run_250316_test2025Startup.sh`
+ ```
+ ./run_250316_test2025Startup.sh out_250316_test2025Startup_patatrack-scripts-746bcbd_
+ ```
+ - Goal: check impact of 2025 HLT-reco changes (e.g. CMSHLT-3421, CMSHLT-3422, CMSHLT-3413),
+         but using same input data as CMS-DP-2024/082 (HLT throughput in 2024).
+ - Input data: run-383631, LSs 410-480, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_1`.
+ - HLT menu: `/dev/CMSSW_15_0_0/GRun/V11`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
