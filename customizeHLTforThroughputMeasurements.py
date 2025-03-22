@@ -9,7 +9,8 @@ from RecoTracker.MkFit.customizeHLTIter0ToMkFit import customizeHLTIter0ToMkFit
 
 def customizeHLTforThroughputMeasurements(process):
     # remove check on timestamp of online-beamspot payloads
-    process.hltOnlineBeamSpotESProducer.timeThreshold = int(1e6)
+    if hasattr(process, 'hltOnlineBeamSpotESProducer'):
+        process.hltOnlineBeamSpotESProducer.timeThreshold = int(1e6)
 
     # same source settings as used online
     process.source.eventChunkSize = 200
