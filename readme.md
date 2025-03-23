@@ -471,7 +471,7 @@ Measurements
 
 `run_250322_test2025Startup.sh`
  ```
- ./run_250322_test2025Startup.sh out_250322_test2025Startup_patatrack-scripts-746bcbd_7c000f2
+ ./run_250322_test2025Startup.sh out_250322_test2025Startup_patatrack-scripts-746bcbd_6438a25
  ```
  - Goal: check impact of 2025 HLT-reco changes (e.g. CMSHLT-3421).
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
