@@ -479,3 +479,14 @@ Measurements
  - HLT menu: `/dev/CMSSW_15_0_0/GRun/V22`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`run_250323_testCMSHLT3460.sh`
+ ```
+ ./run_250323_testCMSHLT3460.sh out_250323_testCMSHLT3460_patatrack-scripts-746bcbd_
+ ```
+ - Goal: check impact of 2025 HLT-reco changes (e.g. CMSHLT-3421).
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_2`.
+ - HLT menu: `/users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3460/Test01/GRun/V2`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
