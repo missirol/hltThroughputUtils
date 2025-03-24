@@ -664,3 +664,30 @@ def customizeHLTforCMSHLT3411_target2(process):
     del process.hltDoubleMuonL3FilteredScoutingNoVtx
     del process.hltDoubleMuonL3FilteredScoutingVtx
     return process
+
+def customizeHLTforCMSHLT3459_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    process = customizeHLTforCMSSW(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process
+
+def customizeHLTforCMSHLT3459_PixelCAwp1(process):
+    process = customizeHLTforCMSHLT3459_baseline(process)
+    process = customizeHLTfor2025Startup_PixelCAwp1(process)
+    return process
+
+def customizeHLTforCMSHLT3459_PixelCAwp1_GlobalSiStripsUnpack(process):
+    process = customizeHLTforCMSHLT3459_PixelCAwp1(process)
+    process.hltSiStripRawToClustersFacility.onDemand = False
+    return process
+
+def customizeHLTforCMSHLT3459_PixelCAwp1_MkFit16(process):
+    process = customizeHLTforCMSHLT3459_PixelCAwp1_GlobalSiStripsUnpack(process)
+    process = customizeHLTIter0ToMkFit(process)
+    process.hltSiStripRawToClustersFacility.Clusterizer.MaxClusterSize = 16
+    return process
