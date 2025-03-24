@@ -482,7 +482,7 @@ Measurements
 
 `run_250323_testCMSHLT3460.sh`
  ```
- ./run_250323_testCMSHLT3460.sh out_250323_testCMSHLT3460_patatrack-scripts-746bcbd_
+ ./run_250323_testCMSHLT3460.sh out_250323_testCMSHLT3460_patatrack-scripts-746bcbd_e14cf0d
  ```
  - Goal: check impact of 2025 HLT-reco changes (e.g. CMSHLT-3421).
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
