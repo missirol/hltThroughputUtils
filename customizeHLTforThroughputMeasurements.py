@@ -602,6 +602,16 @@ def customizeHLTfor2025Startup_baseline_140X(process):
 
     return process
 
+def customizeHLTfor2025Startup_baseline_142X(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.GlobalTag.globaltag = '141X_dataRun3_HLT_v2'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process
+
 def customizeHLTfor2025Startup_baseline0(process):
     process = customizeHLTforThroughputMeasurements(process)
     process = customizeHLTforCMSSW(process)
