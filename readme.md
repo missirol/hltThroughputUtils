@@ -515,7 +515,7 @@ Measurements
 
 `250325_test2025Startup_ref4_150X`
  ```
- ./run_250325_test2025Startup_ref4_150X.sh out_250325_test2025Startup_ref4_150X_patatrack-scripts-746bcbd_
+ ./run_250325_test2025Startup_ref4_150X.sh out_250325_test2025Startup_ref4_150X_patatrack-scripts-746bcbd_5dc0b20
  ```
  - Goal: measure throughtput in `CMSSW_15_0_X` pre-releases.
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
