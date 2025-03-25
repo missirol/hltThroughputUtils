@@ -506,9 +506,20 @@ Measurements
  ```
  ./run_250325_test2025Startup_ref4.sh out_250325_test2025Startup_ref4_patatrack-scripts-746bcbd_49eca67
  ```
- - Goal: measure throughtput in `CMSSW_14_2_X` and `CMSSW_15_0_X` pre-releases.
+ - Goal: measure throughtput in `CMSSW_14_2_X`.
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
- - Release: `CMSSW_14_2_2`, `CMSSW_15_0_0_pre1`, `CMSSW_15_0_0_pre2`, and `CMSSW_15_0_0_pre3`.
+ - Release: `CMSSW_14_2_2`.
+ - HLT menu: `/dev/CMSSW_14_2_0/GRun/V16`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250325_test2025Startup_ref4_150X`
+ ```
+ ./run_250325_test2025Startup_ref4_150X.sh out_250325_test2025Startup_ref4_150X_patatrack-scripts-746bcbd_
+ ```
+ - Goal: measure throughtput in `CMSSW_15_0_X` pre-releases.
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_0_pre1`, `CMSSW_15_0_0_pre2`, and `CMSSW_15_0_0_pre3`.
  - HLT menu: `/dev/CMSSW_14_2_0/GRun/V16`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.

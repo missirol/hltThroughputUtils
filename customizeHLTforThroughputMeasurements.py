@@ -701,3 +701,14 @@ def customizeHLTforCMSHLT3459_PixelCAwp1_MkFit16(process):
     process = customizeHLTIter0ToMkFit(process)
     process.hltSiStripRawToClustersFacility.Clusterizer.MaxClusterSize = 16
     return process
+
+def customizeHLTfor2025Startup_baseline_forCMSSW150X(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    process = customizeHLTforCMSSW(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process
