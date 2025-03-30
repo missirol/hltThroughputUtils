@@ -730,3 +730,23 @@ def customizeHLTforCMSHLT3478_baseline(process):
     del process.HLT_MonitorL1TPureRate_CICADA_v1
 
     return process
+
+def customizeHLTforCMSHLT3479(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process
+
+def customizeHLTforCMSHLT3480(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process
