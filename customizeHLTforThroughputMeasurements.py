@@ -712,3 +712,21 @@ def customizeHLTfor2025Startup_baseline_forCMSSW150X(process):
     process.PrescaleService.forceDefault = True
 
     return process
+
+def customizeHLTforCMSHLT3478_target(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process
+
+def customizeHLTforCMSHLT3478_baseline(process):
+    process = customizeHLTforCMSHLT3478_target(process)
+
+    del process.HLT_MonitorL1TPureRate_AXO_v1
+    del process.HLT_MonitorL1TPureRate_CICADA_v1
+
+    return process

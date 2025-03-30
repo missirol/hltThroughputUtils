@@ -523,3 +523,14 @@ Measurements
  - HLT menu: `/dev/CMSSW_14_2_0/GRun/V16`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250330_testCMSHLT3478`
+ ```
+ ./run_250330_testCMSHLT3478.sh out_250330_testCMSHLT3478_patatrack-scripts-746bcbd_
+ ```
+ - Goal: measure throughtput before/after CMSHLT-3478.
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_3`.
+ - HLT menu: `/users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3478/Test02/GRun/V2`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
