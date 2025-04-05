@@ -537,7 +537,7 @@ Measurements
 
 `250330_testCMSHLT3479`
  ```
- ./run_250330_testCMSHLT3479.sh out_250330_testCMSHLT3479_patatrack-scripts-746bcbd_
+ ./run_250330_testCMSHLT3479.sh out_250330_testCMSHLT3479_patatrack-scripts-746bcbd_d6edbca
  ```
  - Goal: measure throughtput before/after CMSHLT-3479.
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
@@ -548,11 +548,22 @@ Measurements
 
 `250330_testCMSHLT3480`
  ```
- ./run_250330_testCMSHLT3480.sh out_250330_testCMSHLT3480_patatrack-scripts-746bcbd_
+ ./run_250330_testCMSHLT3480.sh out_250330_testCMSHLT3480_patatrack-scripts-746bcbd_d6edbca
  ```
  - Goal: measure throughtput before/after CMSHLT-3480.
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
  - Release: `CMSSW_15_0_3`.
  - HLT menu: `/users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3480/Test02/GRun/V{1,2}`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250405_testCMSHLT3459`
+ ```
+ ./run_250405_testCMSHLT3459.sh out_250405_testCMSHLT3459_patatrack-scripts-746bcbd_
+ ```
+ - Goal: measure throughtput before/after CMSHLT-3459 (including full pixel-doublet recovery).
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_3`.
+ - HLT menu: `/dev/CMSSW_15_0_0/GRun/V39`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
