@@ -894,9 +894,13 @@ def customizeHLTforCMSHLT3459_for2025_FullDoubletRecovery(process):
     process = customizeHLTforFullDoubletRecovery(process)
     return process
 
-def customizeHLTforCMSHLT3459_for2025_PixelCAwp1_MkFit16(process):
+def customizeHLTforCMSHLT3459_for2025_PixelCAwp1(process):
     process = customizeHLTforCMSHLT3459_for2025_baseline(process)
     process = customizeHLTfor2025Startup_PixelCAwp1(process)
+    return process
+
+def customizeHLTforCMSHLT3459_for2025_PixelCAwp1_MkFit16(process):
+    process = customizeHLTforCMSHLT3459_for2025_PixelCAwp1(process)
     process = customizeHLTIter0ToMkFit(process)
     process.hltSiStripRawToClustersFacility.Clusterizer.MaxClusterSize = 16
     return process
