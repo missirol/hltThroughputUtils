@@ -570,7 +570,7 @@ Measurements
 
 `250409_testCMSHLT3459`
  ```
- ./run_250409_testCMSHLT3459.sh out_250409_testCMSHLT3459_patatrack-scripts-746bcbd_
+ ./run_250409_testCMSHLT3459.sh out_250409_testCMSHLT3459_patatrack-scripts-746bcbd_c0d308f
  ```
  - Goal: measure throughtput before/after CMSHLT-3459 (including full pixel-doublet recovery).
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
