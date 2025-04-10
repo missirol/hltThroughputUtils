@@ -578,3 +578,14 @@ Measurements
  - HLT menu: `/dev/CMSSW_15_0_0/GRun/V48`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250410_testDisableEG11AndParkingVBF`
+ ```
+ ./run_250410_testDisableEG11AndParkingVBF.sh out_250410_testDisableEG11AndParkingVBF_patatrack-scripts-746bcbd_
+ ```
+ - Goal: measure throughtput after disabling the DoubleEG11-related triggers, and the ParkingVBF triggers.
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_4` + cms-sw/cmssw#47810.
+ - HLT menu: `/users/missirol/test/dev/CMSSW_15_0_0/tmp/250410_TestDisableEG11AndVBF/Test01/GRun/V*`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
