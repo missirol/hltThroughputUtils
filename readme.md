@@ -581,7 +581,7 @@ Measurements
 
 `250410_testDisableEG11AndParkingVBF`
  ```
- ./run_250410_testDisableEG11AndParkingVBF.sh out_250410_testDisableEG11AndParkingVBF_patatrack-scripts-746bcbd_
+ ./run_250410_testDisableEG11AndParkingVBF.sh out_250410_testDisableEG11AndParkingVBF_patatrack-scripts-746bcbd_66fc876
  ```
  - Goal: measure throughtput after disabling the DoubleEG11-related triggers, and the ParkingVBF triggers.
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).

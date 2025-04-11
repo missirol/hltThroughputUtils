@@ -78,4 +78,4 @@ rm -rf "${jobLabel}"*{cfg,dump}.py
 rm -rf run"${runNumber}"
 rm -rf run"${runNumber}"_cff.py
 rm -rf __pycache__ tmp
-rm -rf tmp0.py
+rm -rf tmp_*.py
