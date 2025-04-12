@@ -25,9 +25,13 @@ hltConfigFromDB --configName /users/missirol/test/dev/CMSSW_15_0_0/tmp/250411_Te
 https_proxy=http://cmsproxy.cms:3128/ \
 hltConfigFromDB --configName /users/missirol/test/dev/CMSSW_15_0_0/tmp/250411_TestLowPtDoubleEG/Test02/GRun/V2 > tmp_testLowPtDoubleEG.py
 
+https_proxy=http://cmsproxy.cms:3128/ \
+hltConfigFromDB --configName /users/missirol/test/dev/CMSSW_15_0_0/tmp/250411_TestLowPtDoubleEG/Test02/GRun/V3 > tmp_testLowPtDoubleEleOnly.py
+
 cp /gpu_data/store/data/Run2024*/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.py .
 
-for jobSubLabel in baseline testLowPtDoubleEG; do
+#for jobSubLabel in baseline testLowPtDoubleEG testLowPtDoubleEleOnly; do
+for jobSubLabel in testLowPtDoubleEleOnly; do
 
   # ensure MPS is disabled at the start
   ./stop-mps-daemon.sh
