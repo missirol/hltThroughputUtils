@@ -925,21 +925,4 @@ def customizeHLTforTestLowPtDoubleEG(process):
 
     process = customizeHLTfor2024L1TMenu(process)
 
-    process.FastTimerService.printEventSummary         = False
-    process.FastTimerService.printRunSummary           = False
-    process.FastTimerService.printJobSummary           = True
-    process.FastTimerService.enableDQM                 = True
-    process.FastTimerService.enableDQMbyPath           = True
-    process.FastTimerService.enableDQMbyModule         = True
-    process.FastTimerService.enableDQMbyLumiSection    = True
-    process.FastTimerService.dqmLumiSectionsRange      = 2500
-    process.FastTimerService.dqmTimeRange              = 2000.
-    process.FastTimerService.dqmTimeResolution         =   10.
-    process.FastTimerService.dqmPathTimeRange          = 1000.
-    process.FastTimerService.dqmPathTimeResolution     =    5.
-    process.FastTimerService.dqmModuleTimeRange        =  200.
-    process.FastTimerService.dqmModuleTimeResolution   =    1.
-    process.FastTimerService.dqmPath                   = 'HLT/TimerService'
-    process.FastTimerService.enableDQMbyProcesses      = False
-
     return process
