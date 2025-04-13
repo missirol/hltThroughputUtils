@@ -926,3 +926,15 @@ def customizeHLTforTestLowPtDoubleEG(process):
     process = customizeHLTfor2024L1TMenu(process)
 
     return process
+
+def customizeHLTforCMSHLT3484(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_forTriggerStudies_v4'
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    process = customizeHLTfor2024L1TMenu(process)
+
+    return process
