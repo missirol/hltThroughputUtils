@@ -622,3 +622,14 @@ Measurements
  - HLT menu: `/users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3484/Test01/GRun/V*`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250414_TestLowPtDoubleEG`
+ ```
+ ./run_250414_testLowPtDoubleEG.sh out_250414_testLowPtDoubleEG_patatrack-scripts-746bcbd_
+ ```
+ - Goal: measure throughtput after including first version of Laurent's low-pT diphoton/dielectron triggers for 2025.
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_4` + cms-sw/cmssw#47810.
+ - HLT menu: `/users/missirol/test/dev/CMSSW_15_0_0/tmp/250411_TestLowPtDoubleEG/Test04/GRun/V*`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
