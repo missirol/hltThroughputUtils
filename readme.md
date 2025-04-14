@@ -614,7 +614,7 @@ Measurements
 
 `250413_testCMSHLT3484`
  ```
- ./run_250413_testCMSHLT3484.sh out_250413_testCMSHLT3484_patatrack-scripts-746bcbd_
+ ./run_250413_testCMSHLT3484.sh out_250413_testCMSHLT3484_patatrack-scripts-746bcbd_05d79de
  ```
  - Goal: measure throughtput for the updates proposed in CMSHLT-3484.
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
