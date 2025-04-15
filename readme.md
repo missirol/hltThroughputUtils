@@ -625,7 +625,7 @@ Measurements
 
 `250414_TestLowPtDoubleEG`
  ```
- ./run_250414_testLowPtDoubleEG.sh out_250414_testLowPtDoubleEG_patatrack-scripts-746bcbd_
+ ./run_250414_testLowPtDoubleEG.sh out_250414_testLowPtDoubleEG_patatrack-scripts-746bcbd_6129ecf
  ```
  - Goal: measure throughtput after including first version of Laurent's low-pT diphoton/dielectron triggers for 2025.
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
