@@ -938,3 +938,26 @@ def customizeHLTforCMSHLT3484(process):
     process = customizeHLTfor2024L1TMenu(process)
 
     return process
+
+def customizeHLTforTestLowPtDoubleEG_newParams(process):
+    process = customizeHLTforTestLowPtDoubleEG(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_forTriggerStudies_v4'
+
+    process = customizeHLTfor2025Startup_PixelCAwp1(process)
+    process = customizeHLTIter0ToMkFit(process)
+    process.hltSiStripRawToClustersFacility.Clusterizer.MaxClusterSize = 16
+
+    for moduleLabel in [
+        'hltDiphoton1510TightIDECALTrackIsoDr0p2to0p4DrPreFilter',
+        'hltDiphoton1510TightIDECALTrackIsoDr0p2to0p4DrFilter',
+        'hltDiEG5TightIDECALTrackIsoDr0p2to0p4DrPreFilter',
+        'hltDielectron125TightIDECALTrackIsoDr0p2to0p4DrFilter',
+    ]:
+        if not hasattr(process, moduleLabel):
+            continue
+        module = getattr(process, moduleLabel)
+        module.lowerdRCut = cms.double( 0.0 )
+        module.upperdRCut = cms.double( 0.3 )
+
+    return process
