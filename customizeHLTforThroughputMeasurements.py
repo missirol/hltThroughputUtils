@@ -961,3 +961,16 @@ def customizeHLTforTestLowPtDoubleEG_newParams(process):
         module.upperdRCut = cms.double( 0.3 )
 
     return process
+
+def customizeHLTforTestLowPtDoubleEG_newParams_barrelOnly(process):
+    process = customizeHLTforTestLowPtDoubleEG_newParams(process)
+
+    try:
+        process.hltEG12TightIDMWL1SingleAndDoubleEGAndDoubleEGEBEBOrEtFilter.minEtaCut = -1.479
+        process.hltEG12TightIDMWL1SingleAndDoubleEGAndDoubleEGEBEBOrEtFilter.maxEtaCut = +1.479
+        process.hltDiEG5TightIDMWEtUnseededFilter.minEta = -1.479
+        process.hltDiEG5TightIDMWEtUnseededFilter.MaxEta = +1.479
+    except:
+        pass
+
+    return process
