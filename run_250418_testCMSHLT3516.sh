@@ -20,11 +20,11 @@ run() {
 }
 
 https_proxy=http://cmsproxy.cms:3128/ \
-hltConfigFromDB --configName /dev/CMSSW_15_0_0/GRun/V57 > tmp0.py
+hltConfigFromDB --configName /dev/CMSSW_15_0_0/GRun/V60 > tmp0.py
 
 cp /gpu_data/store/data/Run2024*/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.py .
 
-for jobSubLabel in baseline_PixelCAwp1_MkFit16 target_PixelCAwp1_MkFit16; do
+for jobSubLabel in baseline target; do
 
   # ensure MPS is disabled at the start
   ./stop-mps-daemon.sh

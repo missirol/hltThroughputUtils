@@ -647,7 +647,7 @@ Measurements
 
 `250417_TestLowPtDoubleEG_newParams_barrelOnly`
  ```
- ./run_250417_testLowPtDoubleEG_newParams_barrelOnly.sh out_250417_testLowPtDoubleEG_newParams_barrelOnly_patatrack-scripts-746bcbd_
+ ./run_250417_testLowPtDoubleEG_newParams_barrelOnly.sh out_250417_testLowPtDoubleEG_newParams_barrelOnly_patatrack-scripts-746bcbd_ca7e8e0
  ```
  - Goal: measure throughtput after including Laurent's low-pT diphoton/dielectron triggers for 2025
    (restricting the 2 new Dielectron triggers to the barrel).
@@ -665,5 +665,16 @@ Measurements
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
  - Release: `CMSSW_15_0_X_2025-04-16-1100`.
  - HLT menu: `/dev/CMSSW_15_0_0/GRun/V57`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250418_testCMSHLT3516`
+ ```
+ ./run_250418_testCMSHLT3516.sh out_250418_CMSHLT3516_patatrack-scripts-746bcbd_
+ ```
+ - Goal: measure throughtput after including the latest 2025 conditions updates (HCALPFCuts, PFHCs, JECs).
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_4_patch3`.
+ - HLT menu: `/dev/CMSSW_15_0_0/GRun/V60`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.

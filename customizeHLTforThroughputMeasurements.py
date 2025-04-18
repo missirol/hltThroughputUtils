@@ -985,14 +985,27 @@ def customizeHLTforCMSHLT3516_baseline(process):
 
     process = customizeHLTfor2024L1TMenu(process)
 
+    return process
+
+def customizeHLTforCMSHLT3516_target(process):
+    process = customizeHLTforCMSHLT3516_baseline(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_forTriggerStudies_v5'
+    process = customizeHLTforCMSHLT3469(process)
+
+    return process
+
+def customizeHLTforCMSHLT3516_baseline_PixelCAwp1_MkFit16(process):
+    process = customizeHLTforCMSHLT3516_baseline(process)
+
     process = customizeHLTfor2025Startup_PixelCAwp1(process)
     process = customizeHLTIter0ToMkFit(process)
     process.hltSiStripRawToClustersFacility.Clusterizer.MaxClusterSize = 16
 
     return process
 
-def customizeHLTforCMSHLT3516_target(process):
-    process = customizeHLTforCMSHLT3516_baseline(process)
+def customizeHLTforCMSHLT3516_target_PixelCAwp1_MkFit16(process):
+    process = customizeHLTforCMSHLT3516_baseline_PixelCAwp1_MkFit16(process)
 
     process.GlobalTag.globaltag = '150X_dataRun3_HLT_forTriggerStudies_v5'
     process = customizeHLTforCMSHLT3469(process)
