@@ -670,7 +670,7 @@ Measurements
 
 `250418_testCMSHLT3516`
  ```
- ./run_250418_testCMSHLT3516.sh out_250418_CMSHLT3516_patatrack-scripts-746bcbd_
+ ./run_250418_testCMSHLT3516.sh out_250418_CMSHLT3516_patatrack-scripts-746bcbd_a3f522b
  ```
  - Goal: measure throughtput after including the latest 2025 conditions updates (HCALPFCuts, PFHCs, JECs).
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
