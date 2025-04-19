@@ -681,7 +681,7 @@ Measurements
 
 `250419_testDuplicateRemoval`
  ```
- ./run_250419_testDuplicateRemoval.sh out_250419_testDuplicateRemoval_patatrack-scripts-746bcbd_
+ ./run_250419_testDuplicateRemoval.sh out_250419_testDuplicateRemoval_patatrack-scripts-746bcbd_f7698db
  ```
  - Goal: measure throughtput after removing all duplicate modules from the GRun menu.
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
