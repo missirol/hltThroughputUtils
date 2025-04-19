@@ -678,3 +678,14 @@ Measurements
  - HLT menu: `/dev/CMSSW_15_0_0/GRun/V60`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250419_testDuplicateRemoval`
+ ```
+ ./run_250419_testDuplicateRemoval.sh out_250419_testDuplicateRemoval_patatrack-scripts-746bcbd_
+ ```
+ - Goal: measure throughtput after removing all duplicate modules from the GRun menu.
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_4_patch3`.
+ - HLT menu (baseline): `/dev/CMSSW_15_0_0/GRun/V60`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
