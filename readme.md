@@ -689,3 +689,14 @@ Measurements
  - HLT menu (baseline): `/dev/CMSSW_15_0_0/GRun/V60`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250420_testCMSHLT3459`
+ ```
+ ./run_250420_testCMSHLT3459.sh out_250420_testCMSHLT3459_patatrack-scripts-746bcbd_
+ ```
+ - Goal: measure throughtput after explicitly using CCCLoose in MkFitProducer instance.
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_4_patch3`.
+ - HLT menus: `/users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3459/Test05/GRun/V{1,2}`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
