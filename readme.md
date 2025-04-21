@@ -692,7 +692,7 @@ Measurements
 
 `250420_testCMSHLT3459`
  ```
- ./run_250420_testCMSHLT3459.sh out_250420_testCMSHLT3459_patatrack-scripts-746bcbd_
+ ./run_250420_testCMSHLT3459.sh out_250420_testCMSHLT3459_patatrack-scripts-746bcbd_e2ffd78
  ```
  - Goal: measure throughtput after explicitly using CCCLoose in MkFitProducer instance.
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
