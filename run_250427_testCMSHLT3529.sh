@@ -20,10 +20,10 @@ run() {
 }
 
 https_proxy=http://cmsproxy.cms:3128/ \
-hltConfigFromDB --configName /users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3459/Test05/GRun/V1 > tmp_baseline.py
+hltConfigFromDB --configName /users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3529/Test01/GRun/V4 > tmp_baseline.py
 
 https_proxy=http://cmsproxy.cms:3128/ \
-hltConfigFromDB --configName /users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3459/Test05/GRun/V2 > tmp_target.py
+hltConfigFromDB --configName /users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3529/Test01/GRun/V6 > tmp_target.py
 
 cp /gpu_data/store/data/Run2024*/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.py .
 
@@ -39,7 +39,7 @@ for jobSubLabel in baseline target; do
 process.load('run${runNumber}_cff')
 
 from customizeHLTforThroughputMeasurements import *
-process = customizeHLTforCMSHLT3516_baseline(process)
+process = customizeHLTforCMSHLT3529_baseline(process)
 @EOF
 
   ### Final configuration file (dump)

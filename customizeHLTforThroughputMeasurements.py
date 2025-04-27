@@ -787,10 +787,10 @@ def customizeHLTforCMSHLT3469(process):
 
 def customizeHLTfor2025JECs(process):
     jecTagsDict = {
-        'AK4CaloHLT': 'JetCorrectorParametersCollection_Run3Winter25Digi_AK4CaloHLT_v1',
-        'AK8CaloHLT': 'JetCorrectorParametersCollection_Run3Winter25Digi_AK8CaloHLT_v1',
-        'AK4PFHLT': 'JetCorrectorParametersCollection_Run3Winter25Digi_AK4PFHLT_v1',
-        'AK8PFHLT': 'JetCorrectorParametersCollection_Run3Winter25Digi_AK8PFHLT_v1',
+        'AK4CaloHLT': 'JetCorrectorParametersCollection_Run3Winter25Digi_AK4CaloHLT_v2',
+        'AK8CaloHLT': 'JetCorrectorParametersCollection_Run3Winter25Digi_AK8CaloHLT_v2',
+        'AK4PFHLT': 'JetCorrectorParametersCollection_Run3Winter25Digi_AK4PFHLT_v2',
+        'AK8PFHLT': 'JetCorrectorParametersCollection_Run3Winter25Digi_AK8PFHLT_v2',
     }
 
     try:
@@ -1009,5 +1009,18 @@ def customizeHLTforCMSHLT3516_target_PixelCAwp1_MkFit16(process):
 
     process.GlobalTag.globaltag = '150X_dataRun3_HLT_forTriggerStudies_v5'
     process = customizeHLTforCMSHLT3469(process)
+
+    return process
+
+def customizeHLTforCMSHLT3529_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    process = customizeHLTfor2024L1TMenu(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_forTriggerStudies_v3'
+    process = customizeHLTfor2025Studies(process)
 
     return process
