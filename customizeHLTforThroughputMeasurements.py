@@ -1024,3 +1024,16 @@ def customizeHLTforCMSHLT3529_baseline(process):
     process = customizeHLTfor2025Studies(process)
 
     return process
+
+def customizeHLTforCMSHLT3459_baseline2(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    process = customizeHLTfor2024L1TMenu(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_forTriggerStudies_v3'
+    process = customizeHLTfor2025Studies(process)
+
+    return process

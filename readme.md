@@ -703,11 +703,25 @@ Measurements
 
 `250427_testCMSHLT3529`
  ```
- ./run_250427_testCMSHLT3529.sh out_250427_testCMSHLT3529_patatrack-scripts-746bcbd_
+ ./run_250427_testCMSHLT3529.sh out_250427_testCMSHLT3529_patatrack-scripts-746bcbd_9e651a8
  ```
  - Goal: measure impact on throughput of CMSHLT-3529 (using latest HCAL/PF/JME conditions in the baseline).
  - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
  - Release: `CMSSW_15_0_4_patch3`.
  - HLT menus: `/users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3529/Test01/GRun/V{4,6}`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250428_testCMSHLT3459`
+ ```
+ ./run_250428_testCMSHLT3459.sh out_250428_testCMSHLT3459_patatrack-scripts-746bcbd_
+ ```
+ - Goal: measure impact on throughput of improving CMSHLT-3459 (using latest HCAL/PF/JME conditions in the baseline).
+   - Not running hltSiStripRecHits when not necessary.
+   - Running SiStrips unpacking not-onDemand only as part of Iter-0 tracking (not elsewhere).
+   - Note: the HLT_IsoTrackB* Paths are removed in this test, in view of CMSHLT-3519.
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_4_patch3`.
+ - HLT menus: `/users/missirol/test/dev/CMSSW_15_0_0/tmp/250427_RearrangeModulesOfTrkIter0/Test03/GRun/V{1,2,3,6}`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
