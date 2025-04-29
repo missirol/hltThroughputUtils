@@ -714,7 +714,7 @@ Measurements
 
 `250428_testCMSHLT3459`
  ```
- ./run_250428_testCMSHLT3459.sh out_250428_testCMSHLT3459_patatrack-scripts-746bcbd_
+ ./run_250428_testCMSHLT3459.sh out_250428_testCMSHLT3459_patatrack-scripts-746bcbd_0369893
  ```
  - Goal: measure impact on throughput of improving CMSHLT-3459 (using latest HCAL/PF/JME conditions in the baseline).
    - Not running hltSiStripRecHits when not necessary.
