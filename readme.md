@@ -728,7 +728,7 @@ Measurements
 
 `250506_testCMSHLT3529`
  ```
- ./run_250506_testCMSHLT3529.sh out_250506_testCMSHLT3529_patatrack-scripts-746bcbd_
+ ./run_250506_testCMSHLT3529.sh out_250506_testCMSHLT3529_patatrack-scripts-746bcbd_8dfde6f
  ```
  - Goal: measure impact on throughput of removing Dielectron triggers introduced in CMSHLT-3529
    (using latest HCAL/PF/JME conditions in the baseline).
