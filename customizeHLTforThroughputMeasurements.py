@@ -832,6 +832,10 @@ def customizeHLTfor2024L1TMenu(process):
         'L1_DoubleTau_Iso38_Iso26_er2p1_Jet55_RmOvlp_dR0p5': 'L1_DoubleIsoTau26er2p1_Jet55_RmOvlp_dR0p5 OR L1_DoubleIsoTau26er2p1_Jet70_RmOvlp_dR0p5',
         'L1_DoubleTau_Iso40_Iso26_er2p1_Jet55_RmOvlp_dR0p5': 'L1_DoubleIsoTau26er2p1_Jet55_RmOvlp_dR0p5 OR L1_DoubleIsoTau26er2p1_Jet70_RmOvlp_dR0p5',
 
+        'L1_DoubleTau_Iso34_Iso23_er2p1_Jet55_RmOvlp_dR0p5': 'L1_DoubleIsoTau26er2p1_Jet55_RmOvlp_dR0p5 OR L1_DoubleIsoTau26er2p1_Jet70_RmOvlp_dR0p5',
+        'L1_DoubleTau_Iso34_Iso23_er2p1_Jet70_RmOvlp_dR0p5': 'L1_DoubleIsoTau26er2p1_Jet55_RmOvlp_dR0p5 OR L1_DoubleIsoTau26er2p1_Jet70_RmOvlp_dR0p5',
+        'L1_DoubleTau_Iso34_Iso26_er2p1_Jet70_RmOvlp_dR0p5': 'L1_DoubleIsoTau26er2p1_Jet55_RmOvlp_dR0p5 OR L1_DoubleIsoTau26er2p1_Jet70_RmOvlp_dR0p5',
+
         'L1_DoubleEG15_11_er1p2_dR_Max0p6': 'L1_DoubleEG11_er1p2_dR_Max0p6',
         'L1_DoubleEG16_11_er1p2_dR_Max0p6': 'L1_DoubleEG11_er1p2_dR_Max0p6',
         'L1_DoubleEG17_11_er1p2_dR_Max0p6': 'L1_DoubleEG11_er1p2_dR_Max0p6',
@@ -1035,5 +1039,18 @@ def customizeHLTforCMSHLT3459_baseline2(process):
 
     process.GlobalTag.globaltag = '150X_dataRun3_HLT_forTriggerStudies_v3'
     process = customizeHLTfor2025Studies(process)
+
+    return process
+
+def customizeHLTforCMSHLT3529_baseline2(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    process = customizeHLTfor2024L1TMenu(process)
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_forTriggerStudies_v6'
+    process = customizeHLTforCMSHLT3469(process)
 
     return process
