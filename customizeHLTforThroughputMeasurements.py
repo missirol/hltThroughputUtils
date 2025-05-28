@@ -1054,3 +1054,11 @@ def customizeHLTforCMSHLT3529_baseline2(process):
     process = customizeHLTforCMSHLT3469(process)
 
     return process
+
+def customizeHLTforCMSHLT3558(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34'
+    process.PrescaleService.forceDefault = True
+
+    return process

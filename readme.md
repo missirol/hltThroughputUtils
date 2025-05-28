@@ -737,3 +737,14 @@ Measurements
  - HLT menus: `/users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3529/Test02/GRun/V{1,2}`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250528_testCMSHLT3558`
+ ```
+ ./run_250528_testCMSHLT3558.sh out_250528_testCMSHLT3558_patatrack-scripts-746bcbd_8dfde6f
+ ```
+ - Goal: measure impact on throughput of removing (using latest HCAL/PF/JME conditions in the baseline).
+ - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_6`.
+ - HLT menus: `/cdaq/test/missirol/dev/CMSSW_15_0_0/CMSHLT_3558/Test01/HLT/V3`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
