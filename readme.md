@@ -740,10 +740,10 @@ Measurements
 
 `250528_testCMSHLT3558`
  ```
- ./run_250528_testCMSHLT3558.sh out_250528_testCMSHLT3558_patatrack-scripts-746bcbd_8dfde6f
+ ./run_250528_testCMSHLT3558.sh out_250528_testCMSHLT3558_patatrack-scripts-746bcbd_ac173d6
  ```
- - Goal: measure impact on throughput of removing (using latest HCAL/PF/JME conditions in the baseline).
- - Input data: run-386593, LSs 94-99, ~40k events (PU ~64).
+ - Goal: measure impact on throughput of CMSHLT-3558.
+ - Input data: run-392642, LSs 178-180, ~40k events (PU ~63).
  - Release: `CMSSW_15_0_6`.
  - HLT menus: `/cdaq/test/missirol/dev/CMSSW_15_0_0/CMSHLT_3558/Test01/HLT/V3`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
