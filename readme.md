@@ -745,6 +745,6 @@ Measurements
  - Goal: measure impact on throughput of CMSHLT-3558.
  - Input data: run-392642, LSs 178-180, ~40k events (PU ~63).
  - Release: `CMSSW_15_0_6`.
- - HLT menus: `/cdaq/test/missirol/dev/CMSSW_15_0_0/CMSHLT_3558/Test01/HLT/V3`.
+ - HLT menus: `/cdaq/test/missirol/dev/CMSSW_15_0_0/CMSHLT_3558/Test01/HLT/V{1,2,3}`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
