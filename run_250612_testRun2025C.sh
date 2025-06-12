@@ -47,7 +47,7 @@ process = customizeHLTforRun2025C(process)
   rm -rf tmp.py
 
   ### Throughput measurements (benchmark)
-  for ntry in {00..00}; do
+  for ntry in {00..01}; do
 
     jobDirPrefix="${jobLabel}"-"${jobSubLabel}"-"${CMSSW_VERSION}"-"${ntry}"
 
