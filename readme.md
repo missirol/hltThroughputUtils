@@ -751,7 +751,7 @@ Measurements
 
 `250612_testRun2025C`
  ```
- ./run_250612_testRun2025C.sh out_250612_testRun2025C_patatrack-scripts-746bcbd_
+ ./run_250612_testRun2025C.sh out_250612_testRun2025C_patatrack-scripts-746bcbd_e516409
  ```
  - Goal: measure throughput in two different runs of Run2025C.
  - Input data.
