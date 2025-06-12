@@ -748,3 +748,16 @@ Measurements
  - HLT menus: `/cdaq/test/missirol/dev/CMSSW_15_0_0/CMSHLT_3558/Test01/HLT/V{1,2,3}`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250612_testRun2025C`
+ ```
+ ./run_250612_testRun2025C.sh out_250612_testRun2025C_patatrack-scripts-746bcbd_
+ ```
+ - Goal: measure throughput in two different runs of Run2025C.
+ - Input data.
+    - run-392642, LSs 178-180, ~40k events (PU ~63).
+    - run-393240, LSs 205-207, ~40k events (PU ~62).
+ - Release: `CMSSW_15_0_7`.
+ - HLT menu: `/cdaq/physics/Run2025/2e34/v1.1.4/HLT/V1` (used online in run-393240).
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.

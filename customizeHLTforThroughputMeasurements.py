@@ -1062,3 +1062,11 @@ def customizeHLTforCMSHLT3558(process):
     process.PrescaleService.forceDefault = True
 
     return process
+
+def customizeHLTforRun2025C(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34+ZeroBias+HLTPhysics'
+    process.PrescaleService.forceDefault = True
+
+    return process
