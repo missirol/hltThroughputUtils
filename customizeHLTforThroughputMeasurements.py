@@ -5,7 +5,7 @@ import re
 from HLTrigger.Configuration.common import filters_by_type
 from HLTrigger.Configuration.customizeHLTforCMSSW import customizeHLTforCMSSW
 
-from RecoTracker.MkFit.customizeHLTIter0ToMkFit import customizeHLTIter0ToMkFit
+from RecoTracker.MkFit.customizeHLTTrackingToMkFit import customizeHLTIter0ToMkFit
 
 def customizeHLTforThroughputMeasurements(process):
     # remove check on timestamp of online-beamspot payloads
@@ -1068,5 +1068,15 @@ def customizeHLTforRun2025C(process):
 
     process.PrescaleService.lvl1DefaultLabel = '2p0E34+ZeroBias+HLTPhysics'
     process.PrescaleService.forceDefault = True
+
+    return process
+
+def customizeHLTforCMSSW48404(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34+ZeroBias+HLTPhysics'
+    process.PrescaleService.forceDefault = True
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
 
     return process

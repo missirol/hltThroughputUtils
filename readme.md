@@ -761,3 +761,14 @@ Measurements
  - HLT menu: `/cdaq/physics/Run2025/2e34/v1.1.4/HLT/V1` (used online in run-393240).
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`250705_test_cmssw48404`
+ ```
+ ./run_250705_test_cmssw48404.sh out_250705_test_cmssw48404_patatrack-scripts-8c92fde_ {ref,tar}
+ ```
+ - Goal: measure impact on throughput of cmssw#48404.
+ - Input data: run-393240, LSs 205-207, ~40k events (PU ~62).
+ - Release: `CMSSW_15_0_X_2025-07-05-1100` (+cmssw#48404 for "tar").
+ - HLT menu: `/dev/CMSSW_15_0_0/GRun/V97` (basically equivalent to the 2025 V1.2 pp menu).
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
