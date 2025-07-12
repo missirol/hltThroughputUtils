@@ -772,3 +772,15 @@ Measurements
  - HLT menu: `/dev/CMSSW_15_0_0/GRun/V97` (similar to the 2025 V1.2 pp menu).
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`run_250712_testCMSHLT3534`
+ ```
+ ./run_250712_testCMSHLT3534.sh out_250712_testCMSHLT3534_patatrack-scripts-8c92fde_
+ ```
+ - Goal: measure impact on throughput of CMSHLT-3534.
+ - Input data: run-393240, LSs 205-207, ~40k events (PU ~62).
+ - Release: `CMSSW_15_0_10`.
+ - HLT menus: `/users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3534/Test11/GRun/V{1,5}`
+    - V1 is a copy of `/dev/CMSSW_15_0_0/GRun/V98`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.

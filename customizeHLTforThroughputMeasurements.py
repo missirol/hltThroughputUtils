@@ -1080,3 +1080,13 @@ def customizeHLTforCMSSW48404(process):
     process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
 
     return process
+
+def customizeHLTforCMSHLT3534(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34+ZeroBias+HLTPhysics'
+    process.PrescaleService.forceDefault = True
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
+
+    return process
