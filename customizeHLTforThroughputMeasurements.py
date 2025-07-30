@@ -1090,3 +1090,39 @@ def customizeHLTforCMSHLT3534(process):
     process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
 
     return process
+
+def customizeHLTforCMSHLT3607_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    process.PrescaleService.lvl1DefaultLabel = '2p0E34+ZeroBias+HLTPhysics'
+    process.PrescaleService.forceDefault = True
+
+    process.GlobalTag.globaltag = '150X_dataRun3_HLT_v1'
+
+    return process
+
+def customizeHLTforCMSHLT3607_target(process):
+    process = customizeHLTforCMSHLT3607_baseline(process)
+
+    process.hltScoutingRecHitPacker = cms.EDProducer("HLTScoutingRecHitProducer",
+      pfRecHitsECAL = cms.InputTag('hltParticleFlowRecHitECALUnseeded'),
+      minEnergyEB = cms.double(-1),
+      minEnergyEE = cms.double(-1),
+
+      pfRecHitsECALCleaned = cms.InputTag('hltParticleFlowRecHitECALUnseeded:Cleaned'),
+      minEnergyCleanedEB = cms.double(-1),
+      minEnergyCleanedEE = cms.double(-1),
+
+      pfRecHitsHBHE = cms.InputTag('hltParticleFlowRecHitHBHE'),
+      minEnergyHBHE = cms.double(1),
+
+      mantissaPrecision = cms.int32(10),
+    )
+
+    process.HLTPFScoutingPackingSequence.insert(0, process.hltScoutingRecHitPacker)
+
+    process.hltOutputScoutingPF.outputCommands += [
+        'keep *_hltScoutingRecHitPacker_*_*',
+    ]
+
+    return process

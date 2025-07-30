@@ -796,3 +796,14 @@ Measurements
     - V1 is identical to `/dev/CMSSW_15_0_0/GRun/V103`.
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`run_250729_testCMSHLT3607`
+ ```
+ ./run_250729_testCMSHLT3607.sh out_250729_testCMSHLT3607_patatrack-scripts-8c92fde_
+ ```
+ - Goal: measure impact on throughput of CMSHLT-3607.
+ - Input data: run-394959, LSs 244-247, ~40k events (PU ~63).
+ - Release: `CMSSW_15_0_11`.
+ - HLT menus: `/dev/CMSSW_15_0_0/GRun/V103`.
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
