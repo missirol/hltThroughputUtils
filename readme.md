@@ -810,7 +810,7 @@ Measurements
 
 `run_250808_testCMSHLT3534`
  ```
- ./run_250808_testCMSHLT3534.sh out_250808_testCMSHLT3534_patatrack-scripts-8c92fde_
+ ./run_250808_testCMSHLT3534.sh out_250808_testCMSHLT3534_patatrack-scripts-8c92fde_ebfce6f
  ```
  - Goal: measure impact on throughput of CMSHLT-3534.
  - Input data: run-394959, LSs 244-247, ~40k events (PU ~63).
