@@ -19,7 +19,7 @@ def customizeHLTforThroughputMeasurements(process):
     process.source.maxBufferedFiles = 2
 
     # taken from hltDAQPatch.py
-    process.options.numberOfConcurrentLuminosityBlocks = 2
+    process.options.numberOfConcurrentLuminosityBlocks = 1
 
     # write a JSON file with the timing information
     if hasattr(process, 'FastTimerService'):
