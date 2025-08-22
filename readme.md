@@ -833,7 +833,7 @@ Measurements
 
 `run_250824_run396102vs394959`
  ```
- ./run_250824_run396102vs394959.sh out_250824_run396102vs394959_patatrack-scripts-9b51548_
+ ./run_250824_run396102vs394959.sh out_250824_run396102vs394959_patatrack-scripts-9b51548_7aa7233
  ```
  - Goal: measure throughput on HLTPhysics data of run-396102 and run-394959, with the only difference being the input data.
  - Note:
