@@ -819,3 +819,14 @@ Measurements
  - HLT menu (tar): `/users/missirol/test/dev/CMSSW_15_0_0/CMSHLT_3534/Test41/GRun/V3`
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`run_250823_run396102`
+ ```
+ ./run_250823_run396102.sh out_250823_run396102_patatrack-scripts-9b51548_
+ ```
+ - Goal: measure throughput on HLTPhysics data of run-396102 (with and without GPU offloading).
+ - Input data: run-396102, LSs 295-298, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_12_patch1`.
+ - HLT menu: `/cdaq/physics/Run2025/2e34/v1.3.0/HLT/V3` (same as used online in run-396102).
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
