@@ -822,10 +822,26 @@ Measurements
 
 `run_250823_run396102`
  ```
- ./run_250823_run396102.sh out_250823_run396102_patatrack-scripts-9b51548_
+ ./run_250823_run396102.sh out_250823_run396102_patatrack-scripts-9b51548_44d0868
  ```
  - Goal: measure throughput on HLTPhysics data of run-396102 (with and without GPU offloading).
  - Input data: run-396102, LSs 295-298, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_12_patch1`.
+ - HLT menu: `/cdaq/physics/Run2025/2e34/v1.3.0/HLT/V3` (same as used online in run-396102).
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`run_250824_run396102vs394959`
+ ```
+ ./run_250824_run396102vs394959.sh out_250824_run396102vs394959_patatrack-scripts-9b51548_
+ ```
+ - Goal: measure throughput on HLTPhysics data of run-396102 and run-394959, with the only difference being the input data.
+ - Note:
+     - compared to run-396102, the online-luminosity calibrations used for run-394959 are 4% higher;
+     - this means that the "PU~63" of run-394959 corresponds to PU~60.5 if considering the luminosity calibrations of run-396102,
+     - so the difference in actual PU between the two runs is expected to be of the order of 5.5%.
+ - Input data #1: run-394959, LSs 244-247, ~40k events (PU ~63).
+ - Input data #2: run-396102, LSs 295-298, ~40k events (PU ~64).
  - Release: `CMSSW_15_0_12_patch1`.
  - HLT menu: `/cdaq/physics/Run2025/2e34/v1.3.0/HLT/V3` (same as used online in run-396102).
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
