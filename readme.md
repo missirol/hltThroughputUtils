@@ -846,3 +846,15 @@ Measurements
  - HLT menu: `/cdaq/physics/Run2025/2e34/v1.3.0/HLT/V3` (same as used online in run-396102).
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
  - NVIDIA MPS enabled, `x86-64-v3` enabled.
+
+`run_251012_cmssw49125_test01`
+ ```
+ ./run_251012_cmssw49125_test01.sh out_251012_cmssw49125_test01_patatrack-scripts-9b51548_
+ ```
+ - Goal: measure impact on HLT throughput of a possible fix for cms-sw/cmssw#49125.
+ - Input data: run-396102, LSs 295-298, ~40k events (PU ~64).
+ - Release: `CMSSW_15_0_15_patch3` (ref), and `CMSSW_15_0_15_patch3` + fix (tar).
+   - Fix: https://github.com/missirol/cmssw/commit/c035230d9e0d1ff7c9e1ba61c1369ee7d345e141
+ - HLT menu: `/cdaq/physics/Run2025/2e34/v1.3.4/HLT/V1` (same as used online in run-398011).
+ - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
+ - NVIDIA MPS enabled, `x86-64-v3` enabled.
