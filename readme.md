@@ -849,7 +849,7 @@ Measurements
 
 `run_251012_cmssw49125_test01`
  ```
- ./run_251012_cmssw49125_test01.sh out_251012_cmssw49125_test01_patatrack-scripts-9b51548_
+ ./run_251012_cmssw49125_test01.sh out_251012_cmssw49125_test01_patatrack-scripts-9b51548_2c8963a
  ```
  - Goal: measure impact on HLT throughput of a possible fix for cms-sw/cmssw#49125.
  - Input data: run-396102, LSs 295-298, ~40k events (PU ~64).
