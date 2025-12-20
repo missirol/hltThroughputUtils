@@ -7,7 +7,7 @@ from HLTrigger.Configuration.customizeHLTforCMSSW import customizeHLTforCMSSW
 
 from RecoTracker.MkFit.customizeHLTTrackingToMkFit import customizeHLTIter0ToMkFit
 
-from customizeHLTforCKF2024 import customizeHLTforCKF2024
+from customizeHLTforCKF2024 import *
 
 def customizeHLTforThroughputMeasurements(process):
     # remove check on timestamp of online-beamspot payloads
@@ -1139,7 +1139,12 @@ def customizeHLTforTestCKF2024_baseline(process):
 
     return process
 
-def customizeHLTforTestCKF2024_target(process):
+def customizeHLTforTestCKF2024_target1(process):
     process = customizeHLTforTestCKF2024_baseline(process)
     process = customizeHLTforCKF2024(process)
+    return process
+
+def customizeHLTforTestCKF2024_target2(process):
+    process = customizeHLTforTestCKF2024_target1(process)
+    process = customizeHLTforIter0PFlowTrackCutClassifier2025(process)
     return process

@@ -24,7 +24,7 @@ hltConfigFromDB --runNumber 398802 > tmp0.py
 
 cp /gpu_data/store/data/Run2025*/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.py .
 
-for jobSubLabel in baseline target; do
+for jobSubLabel in baseline target1 target2; do
 
   # ensure MPS is disabled at the start
   ./stop-mps-daemon.sh
