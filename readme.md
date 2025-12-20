@@ -873,7 +873,7 @@ Measurements
 
 `run_251219_testCKF2024`
  ```
- ./run_251219_testCKF2024.sh out_251219_testCKF2024_patatrack-scripts-9bb042f_5bfa023
+ ./run_251219_testCKF2024.sh out_251219_testCKF2024_patatrack-scripts-9bb042f_28e9820
  ```
  - Goal: measure impact on HLT throughput of MkFit updates using pp data from Run2025G.
  - Input data: run-398183, LSs 322-325, ~40k events (PU ~64.6).
