@@ -873,10 +873,10 @@ Measurements
 
 `run_251219_testCKF2024`
  ```
- ./run_251219_testCKF2024.sh out_251219_testCKF2024_patatrack-scripts-9bb042f_
+ ./run_251219_testCKF2024.sh out_251219_testCKF2024_patatrack-scripts-9bb042f_5bfa023
  ```
- - Goal: measure impact on HLT throughput of MkFit updates on pp data from Run2025G.
- - Input data: run-398183, LSs 322-325, ~40k events (PU ~64).
+ - Goal: measure impact on HLT throughput of MkFit updates using pp data from Run2025G.
+ - Input data: run-398183, LSs 322-325, ~40k events (PU ~64.6).
  - Release: `CMSSW_15_0_17`.
  - HLT menu: `/cdaq/physics/Run2025/2e34/v1.3.5/HLT/V3` (same as used online in run-398802).
  - Done on `hilton-c2b02-44-01`, using 8 jobs with 32 threads and 24 streams per job.
